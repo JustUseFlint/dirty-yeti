@@ -71,7 +71,7 @@
     lastY = y;
   }
   H.classList.add('hdr-shown');
-  if (lenis) lenis.on('scroll', onScroll); else W.addEventListener('scroll', onScroll, { passive: true });
+  if (lenis) lenis.on('scroll', onScroll); W.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
   /* ---------- split text + reveals ---------- */
