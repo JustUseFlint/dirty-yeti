@@ -4,7 +4,7 @@ export const EMAIL = 'thedirtyyeti.dirtysodaco@gmail.com';
 export const IG = 'https://www.instagram.com/thedirtyyeti_/';
 export const IG_HANDLE = '@thedirtyyeti_';
 export const FB = 'https://www.facebook.com/people/The-Dirty-Yeti/61586227516939/';
-export const V = '4';
+export const V = '4b';
 
 export const CATS = [
   { id: 'soda', label: 'Soda', size: '24 oz', price: 6, blurb: 'Soda mixed with flavored syrups, cream and toppings.' },

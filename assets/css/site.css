@@ -488,7 +488,8 @@ ul, ol { padding: 0; list-style: none; }
 .sp-main { grid-column: 1 / -1; position: relative; }
 .sp-main img { aspect-ratio: 4 / 3; }
 .sp-main figcaption { position: absolute; left: 14px; bottom: 14px; right: 14px; color: var(--white); font-weight: 700; font-size: 14px; text-shadow: 0 1px 12px rgba(0, 0, 0, .5); }
-.sp-a img, .sp-b img { aspect-ratio: 4 / 5; }
+.sp-a img, .sp-b img { aspect-ratio: 4 / 5; display: block; }
+.sp-a, .sp-b { background: none !important; }
 .sp-b { transform: translateY(28px); }
 @media (min-width: 900px) {
   .ab2-spread { grid-template-columns: 1.7fr 1fr 1fr; gap: 20px; align-items: stretch; }
