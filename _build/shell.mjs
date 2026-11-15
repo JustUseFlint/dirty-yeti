@@ -25,8 +25,8 @@ export const ico = {
   spark: `<svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5c.6 5.6 4.9 9.9 10.5 10.5-5.6.6-9.9 4.9-10.5 10.5C11.4 16.9 7.1 12.6 1.5 12 7.1 11.4 11.4 7.1 12 1.5z" fill="currentColor"/></svg>`,
 };
 
-export const btn = (href, label, { cls = 'btn-ink', icon = ico.arrow, ext = false, iconFirst = false, attrs = '' } = {}) =>
-  `<a class="btn ${cls}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''} data-magnetic${attrs ? ' ' + attrs : ''}><span class="btn-in">${iconFirst ? icon : ''}<span class="btn-t" data-text="${esc(label)}">${esc(label)}</span>${iconFirst ? '' : icon}</span></a>`;
+export const btn = (href, label, { cls = 'btn-ink', icon = ico.arrow, ext = false, iconFirst = false, attrs = '', magnetic = true } = {}) =>
+  `<a class="btn ${cls}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}${magnetic ? ' data-magnetic' : ''}${attrs ? ' ' + attrs : ''}><span class="btn-in">${iconFirst ? icon : ''}<span class="btn-t" data-text="${esc(label)}">${esc(label)}</span>${iconFirst ? '' : icon}</span></a>`;
 
 const NAV = [['Menu', 'menu/', ico.cup], ['Find us', 'find-us/', ico.pin], ['Events', 'events/', ico.party], ['About', 'about/', ico.yeti]];
 const FONTS = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400..800;1,500&display=swap';
@@ -65,7 +65,7 @@ export function header(root, path) {
   <a class="hdr-logo" href="${root}" aria-label="The Dirty Yeti, home"><img src="${root}assets/img/logo-240.png" alt="" width="240" height="230"></a>
   <nav class="hdr-nav" aria-label="Primary">${NAV.map(([t, h]) => `<a href="${root}${h}"${cur(h)}>${t}</a>`).join('')}</nav>
   <div class="hdr-r">
-    ${btn(root + 'find-us/', 'Where’s the camper?', { cls: 'btn-ink btn-sm hdr-cta' })}
+    ${btn(root + 'find-us/', 'Where’s the camper?', { cls: 'btn-ink btn-sm hdr-cta', magnetic: false })}
     <button class="burger" type="button" aria-expanded="false" aria-controls="nav-overlay" data-burger><span class="burger-t">Menu</span><span class="burger-i" aria-hidden="true"><i></i><i></i></span><span class="sr">Open navigation</span></button>
   </div>
 </header>
@@ -103,7 +103,6 @@ export function footer(root) {
 export function scripts(root, extra = '') {
   return `<script src="${root}assets/vendor/gsap.min.js?v=${V}"></script>
 <script src="${root}assets/vendor/ScrollTrigger.min.js?v=${V}"></script>
-<script src="${root}assets/vendor/lenis.min.js?v=${V}"></script>
 ${extra}<script src="${root}assets/js/site.js?v=${V}"></script>
 </body>
 </html>`;

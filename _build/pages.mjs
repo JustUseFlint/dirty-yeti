@@ -215,7 +215,7 @@ export function findUs() {
   <section class="phero phero-find">
     <div class="wrap">
       <p class="eyebrow eb-cream" data-rise>Where’s the camper?</p>
-      <h1 class="ph-h" data-split>Follow the pink.</h1>
+      <h1 class="ph-h" data-split>Follow the yeti</h1>
       <p class="ph-sub" data-rise>We’re a camper, so we move around. Follow us to see where we’ll be next and to keep up with your newest obsession.</p>
       <div class="ph-btns" data-rise>${btn(FB, 'Facebook', { cls: 'btn-ink', icon: ico.fb, iconFirst: true, ext: true })}${btn(IG, 'Instagram', { cls: 'btn-cream', icon: ico.ig, iconFirst: true, ext: true })}</div>
     </div>
@@ -469,7 +469,7 @@ export function about() {
 
   <section class="book">
     <div class="wrap book-in">
-      <h2 class="book-h" data-split>Want the pink camper at your event?</h2>
+      <h2 class="book-h" data-split>Want the yeti at your event?</h2>
       <div class="book-r" data-rise><p>Email us with the date, the place and what you’re planning.</p>${btn(`mailto:${EMAIL}?subject=${encodeURIComponent('The pink camper at our event')}`, 'Email us', { cls: 'btn-pink', icon: ico.mail, iconFirst: true })}<a class="ul-link" href="${root}events/">More about events</a></div>
     </div>
   </section>
