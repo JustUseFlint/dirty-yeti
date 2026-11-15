@@ -83,17 +83,17 @@
     $$('.wd', el).forEach(function (w) { w.setAttribute('aria-hidden', 'true'); });
   });
   if (motion) {
-    var heroSplits = $$('.hero [data-split], .phero [data-split], .nf [data-split]');
+    var heroSplits = $$('.hero [data-split], .phero [data-split], .nf [data-split], .dhero [data-split], .ab2-hero [data-split]');
     var tl0 = gsap.timeline({ delay: 0.25 });
-    tl0.to($$('.hero [data-split] .wd > span, .phero [data-split] .wd > span, .nf [data-split] .wd > span'), { y: 0, duration: 1.1, ease: 'expo.out', stagger: 0.06 }, 0);
-    tl0.to($$('.hero [data-rise], .phero [data-rise]'), { opacity: 1, y: 0, duration: 0.9, ease: 'expo.out', stagger: 0.08 }, 0.35);
+    tl0.to($$('.hero [data-split] .wd > span, .phero [data-split] .wd > span, .nf [data-split] .wd > span, .dhero [data-split] .wd > span, .ab2-hero [data-split] .wd > span'), { y: 0, duration: 1.1, ease: 'expo.out', stagger: 0.06 }, 0);
+    tl0.to($$('.hero [data-rise], .phero [data-rise], .dhero [data-rise], .ab2-hero [data-rise]'), { opacity: 1, y: 0, duration: 0.9, ease: 'expo.out', stagger: 0.08 }, 0.35);
     var sq = $('.squig path');
     if (sq) tl0.fromTo(sq, { strokeDashoffset: 420 }, { strokeDashoffset: 0, duration: 1, ease: 'power3.inOut' }, 0.6);
     $$('[data-split]').forEach(function (el) {
       if (heroSplits.indexOf(el) > -1) return;
       gsap.to($$('.wd > span', el), { y: 0, duration: 1, ease: 'expo.out', stagger: 0.07, scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
     });
-    ScrollTrigger.batch($$('[data-rise]').filter(function (el) { return !el.closest('.hero, .phero'); }), {
+    ScrollTrigger.batch($$('[data-rise]').filter(function (el) { return !el.closest('.hero, .phero, .dhero, .ab2-hero'); }), {
       start: 'top 90%', once: true,
       onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, duration: 0.9, ease: 'expo.out', stagger: 0.08 }); }
     });
@@ -102,7 +102,7 @@
   /* ---------- cups: bubbles while visible, fill on reveal ---------- */
   if ('IntersectionObserver' in W) {
     var io = new IntersectionObserver(function (es) { es.forEach(function (en) { en.target.classList.toggle('live', en.isIntersecting); }); }, { rootMargin: '60px' });
-    $$('.dcard, .mcard, .newbanner, .hero-media, .drop-cup, .nyt-tile, .build-cup, .nf-cup').forEach(function (el) { io.observe(el); });
+    $$('.dcard, .mcard, .newbanner, .hero-media, .drop-cup, .nyt-tile, .build-cup, .nf-cup, .dhero-cup, .pn, .eq').forEach(function (el) { io.observe(el); });
   }
   if (motion) {
     ScrollTrigger.batch($$('.dcard, .mcard, .newbanner'), {
@@ -148,18 +148,30 @@
   });
 
   /* ---------- HOME ---------- */
+  // static hero: one-time load-in only, nothing tied to scroll
   var hero = $('[data-hero]');
   if (hero && motion) {
-    var pin = $('.hero-pin', hero), media = $('[data-hero-media]', hero), frame = $('.hero-frame', hero), copy = $('.hero-copy', hero);
-    var htl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom bottom', scrub: 0.6, invalidateOnRefresh: true } });
-    htl.to(copy, { y: -120, opacity: 0, ease: 'power2.in', duration: 0.5 }, 0)
-      .fromTo(frame, { top: 0, left: 0, width: function () { return media.clientWidth; }, height: function () { return frame.offsetHeight; }, rotation: -2.5, borderWidth: 5, borderRadius: 28 },
-        { top: function () { return -media.offsetTop; }, left: function () { return -media.offsetLeft; }, width: function () { return pin.clientWidth; }, height: function () { return pin.clientHeight; }, rotation: 0, borderWidth: 0, borderRadius: 0, ease: 'power2.inOut', duration: 1 }, 0)
-      .to('.hc1', { xPercent: -160, yPercent: 60, rotation: -40, ease: 'power2.in', duration: 0.8 }, 0)
-      .to('.hc2', { xPercent: 160, yPercent: -80, rotation: 40, ease: 'power2.in', duration: 0.8 }, 0)
-      .to('.hc3', { yPercent: 160, rotation: 30, ease: 'power2.in', duration: 0.8 }, 0)
-      .to($('.hero-frame img', hero), { scale: 1.08, ease: 'none', duration: 1 }, 0);
+    tl0.fromTo($('.hero-frame', hero), { opacity: 0, y: 40, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: 'expo.out', clearProps: 'opacity,transform' }, 0.15);
+    $$('.hero-cup svg', hero).forEach(function (c, i) { tl0.fromTo(c, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 1, ease: 'back.out(1.6)', clearProps: 'opacity,transform' }, 0.55 + i * 0.12); });
   }
+  // drink hero: the cup fills once on load
+  var pour = $('[data-pour]');
+  if (pour && motion) {
+    var pl = $('.liq', pour), pp = $('.pile', pour), pf = $('.foam', pour), ps = $('.straw', pour);
+    tl0.fromTo(pour.firstElementChild, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.9, ease: 'expo.out' }, 0);
+    if (pl) tl0.fromTo(pl, { y: 230 }, { y: 0, duration: 1.6, ease: 'power3.out' }, 0.2);
+    if (pf) tl0.fromTo(pf, { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'back.out(2)' }, 1.2);
+    if (pp) tl0.fromTo(pp, { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'back.out(2.2)' }, 1.35);
+    if (ps) tl0.fromTo(ps, { y: -60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out' }, 1.1);
+  }
+  // about lede: words fill in as it scrolls past
+  $$('[data-lede]').forEach(function (el) {
+    var words = el.textContent.trim().split(/\s+/);
+    el.innerHTML = '<span class="sr-only">' + el.textContent.trim().replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>' + words.map(function (w) { return '<span class="lw" aria-hidden="true">' + w.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>'; }).join(' ');
+    if (!motion) return;
+    var ws = $$('.lw', el);
+    gsap.to(ws, { opacity: 1, ease: 'none', stagger: 0.1, scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 45%', scrub: 0.5 } });
+  });
   // dirty soda, built
   var build = $('[data-build]');
   if (build && motion) {

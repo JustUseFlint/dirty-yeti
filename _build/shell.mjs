@@ -90,7 +90,7 @@ export function footer(root) {
     </div>
     <div class="ftr-cols">
       <div><p class="lbl">Explore</p><a href="${root}">Home</a><a href="${root}menu/">Menu</a><a href="${root}find-us/">Find us</a><a href="${root}events/">Events</a><a href="${root}about/">About</a></div>
-      <div><p class="lbl">The menu</p><a href="${root}menu/#soda">Soda · $6</a><a href="${root}menu/#energy">Energy · $8</a><a href="${root}menu/#lemonade">Lemonade · $10</a><a href="${root}menu/#jack-frost">Jack Frost</a></div>
+      <div><p class="lbl">The menu</p><a href="${root}menu/#soda">Soda · $6</a><a href="${root}menu/#energy">Energy · $8</a><a href="${root}menu/#lemonade">Lemonade · $10</a><a href="${root}menu/jack-frost/">Jack Frost</a></div>
       <div><p class="lbl">Follow along</p><a href="${IG}" target="_blank" rel="noopener">${ico.ig}Instagram</a><a href="${FB}" target="_blank" rel="noopener">${ico.fb}Facebook</a></div>
       <div class="ftr-mail"><p class="lbl">Email</p><a href="mailto:${EMAIL}">${ico.mail}<span>thedirtyyeti.<wbr>dirtysodaco<wbr>@gmail.com</span></a></div>
     </div>

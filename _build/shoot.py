@@ -4,7 +4,8 @@ from playwright.async_api import async_playwright
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://127.0.0.1:8833/dirty-yeti/'
 OUT = '/workspace/dirty-yeti/shots/'
 PRE = sys.argv[3] if len(sys.argv) > 3 else ''
-PAGES = ['', 'menu/', 'find-us/', 'events/', 'about/', 'nope-404/']
+import os
+PAGES = os.environ.get('PAGES', '|menu/|find-us/|events/|about/|nope-404/').split('|')
 only = sys.argv[2].split(',') if len(sys.argv) > 2 else ['phone', 'desk']
 async def run():
     async with async_playwright() as p:
@@ -21,7 +22,7 @@ async def run():
                 pg.on('response', lambda r, e=bad: e.append(f'{r.status} {r.url}') if r.status >= 400 and 'nope-404' not in r.url else None)
                 await pg.goto(BASE + path, wait_until='networkidle', timeout=60000)
                 await pg.wait_for_timeout(1800)
-                name = PRE + (path.strip('/') or 'home') + '-' + vk
+                name = PRE + (path.strip('/').replace('/', '-') or 'home') + '-' + vk
                 await pg.screenshot(path=OUT + name + '.png')
                 h = await pg.evaluate('document.documentElement.scrollHeight'); y = 0; i = 0
                 while y < h:

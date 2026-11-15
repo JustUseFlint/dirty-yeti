@@ -14,7 +14,7 @@
 <link rel="icon" href="../assets/img/favicon.png" type="image/png"><link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400..800;1,500&display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=3">
+<link rel="stylesheet" href="../assets/css/site.css?v=4">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FoodEstablishment","name":"The Dirty Yeti","alternateName":"The Dirty Yeti Dirty Soda Co.","description":"Mobile dirty soda co. in Indiana. Yes, we’re THAT pink camper.","email":"thedirtyyeti.dirtysodaco@gmail.com","url":"https://justuseflint.github.io/dirty-yeti/","image":"https://justuseflint.github.io/dirty-yeti/assets/img/og.jpg","logo":"https://justuseflint.github.io/dirty-yeti/assets/img/logo-640.png","servesCuisine":"Dirty soda, energy drinks, lemonade","areaServed":"Indiana","sameAs":["https://www.facebook.com/people/The-Dirty-Yeti/61586227516939/","https://www.instagram.com/thedirtyyeti_/"],"hasMenu":"https://justuseflint.github.io/dirty-yeti/menu/","priceRange":"$6–$10"}</script>
 <script>(function(d,w){var h=d.documentElement;h.className=h.className.replace('no-js','js');var rm=w.matchMedia&&w.matchMedia('(prefers-reduced-motion: reduce)').matches;if(!rm){h.classList.add('motion');try{if(sessionStorage.getItem('dy-pt')==='1')h.classList.add('pt-in')}catch(e){}}else{h.classList.add('no-motion')}setTimeout(function(){if(!w.__dyReady){h.classList.remove('motion','pt-in');h.classList.add('no-motion')}},4000)})(document,window)</script>
 </head>
@@ -38,6 +38,7 @@
     </div>
   </div>
 </div>
+<script>(function(){var h=decodeURIComponent(location.hash.slice(1));var ids=["cinnamon-bun","velvet-cherry","butter-me-up","cherry-float","cozy-campfire","birthday-bash","the-yeti","pinkity-drinkity","765","golden-snitch","purple-rain","orange-dreamsicle","princess-peach","berries-n-cream","yeti-juice","5-oclock-somewhere","malibu-barbie","blue-voltage","peaches-n-cream","jolly-rancher","sunset","love-island","gone-fishing","strawberry-shortcake","jack-frost"];if(ids.indexOf(h)>-1)location.replace(h+'/');})()</script>
 <main id="main">
   <section class="phero phero-menu">
     <div class="wrap">
@@ -52,12 +53,12 @@
     <div class="wrap jump-in">
       <span class="jump-l">Jump to</span>
       <a href="#soda" data-jump-link="soda">Soda <em>$6</em></a><a href="#energy" data-jump-link="energy">Energy <em>$8</em></a><a href="#lemonade" data-jump-link="lemonade">Lemonade <em>$10</em></a>
-      <a href="#jack-frost" data-jump-link="jack-frost">New: Jack Frost</a>
+      <a href="#new" data-jump-link="new">New: Jack Frost</a>
     </div>
   </nav>
 
-  <section class="wrap new-w" aria-labelledby="jack-frost-h">
-    <article class="newbanner" id="jack-frost">
+  <section class="wrap new-w" aria-label="New on the board">
+    <a class="newbanner" id="new" href="jack-frost/">
       <div class="nb-cup"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gjack-frostm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e4f6ff"/><stop offset="50%" stop-color="#9fd8f2"/><stop offset="100%" stop-color="#4fb0e3"/></linearGradient>
   <filter id="bjack-frostm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
@@ -88,10 +89,11 @@
 </svg></div>
       <div class="nb-copy">
         <p class="badge-new"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5c.6 5.6 4.9 9.9 10.5 10.5-5.6.6-9.9 4.9-10.5 10.5C11.4 16.9 7.1 12.6 1.5 12 7.1 11.4 11.4 7.1 12 1.5z" fill="currentColor"/></svg>New on the board</p>
-        <h2 id="jack-frost-h" class="nb-h">Jack Frost</h2>
+        <span id="jack-frost-h" class="nb-h">Jack Frost</span>
         <p>Our newest seasonal drink. Ask at the window for what’s in it and the price.</p>
+        <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
-    </article>
+    </a>
   </section>
 
   <section class="msec" id="soda" aria-labelledby="soda-h">
@@ -100,8 +102,8 @@
         <h2 class="h2" id="soda-h" data-split>Soda</h2>
         <div class="msec-meta"><p class="msec-price"><b>$6</b><span>24 oz</span></p><p>Soda mixed with flavored syrups, cream and toppings.</p></div>
       </header>
-      <div class="mgrid"><article class="mcard" id="cinnamon-bun" style="--tint:#f6dccb">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+      <div class="mgrid"><a class="mcard" href="cinnamon-bun/" style="--tint:#f6dccb">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gcinnamon-bunm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a9663f"/><stop offset="50%" stop-color="#6d2a22"/><stop offset="100%" stop-color="#4a1219"/></linearGradient>
   <filter id="bcinnamon-bunm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="ccinnamon-bunm"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -120,13 +122,14 @@
   <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Cinnamon Bun</h3><p class="mcard-price">$6</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Dr Pepper</li><li>Cinnamon Bun</li><li>Half n Half</li></ul>
-  </div>
-</article><article class="mcard" id="velvet-cherry" style="--tint:#ffd2dc">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Cinnamon Bun</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ing"><span>Dr Pepper</span><span>Cinnamon Bun</span><span>Half n Half</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="velvet-cherry/" style="--tint:#ffd2dc">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gvelvet-cherrym" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b23048"/><stop offset="50%" stop-color="#7a1426"/><stop offset="100%" stop-color="#4a1219"/></linearGradient>
   <filter id="bvelvet-cherrym" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cvelvet-cherrym"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -145,13 +148,14 @@
   <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Velvet Cherry</h3><p class="mcard-price">$6</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Dr Pepper</li><li>Cherry</li><li>Cream</li><li>Half n Half</li></ul>
-  </div>
-</article><article class="mcard" id="butter-me-up" style="--tint:#f3dcc2">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Velvet Cherry</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ing"><span>Dr Pepper</span><span>Cherry</span><span>Cream</span><span>Half n Half</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="butter-me-up/" style="--tint:#f3dcc2">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gbutter-me-upm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b97a45"/><stop offset="50%" stop-color="#7a3a22"/><stop offset="100%" stop-color="#4a1219"/></linearGradient>
   <filter id="bbutter-me-upm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cbutter-me-upm"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -170,13 +174,14 @@
   <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Butter Me Up</h3><p class="mcard-price">$6</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Dr Pepper</li><li>Cookie Butter</li><li>Half n Half</li><li>Cold Foam</li></ul>
-  </div>
-</article><article class="mcard" id="cherry-float" style="--tint:#ffc9d3">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Butter Me Up</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ing"><span>Dr Pepper</span><span>Cookie Butter</span><span>Half n Half</span><span>Cold Foam</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="cherry-float/" style="--tint:#ffc9d3">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gcherry-floatm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ef5d74"/><stop offset="50%" stop-color="#d92945"/><stop offset="100%" stop-color="#b3122e"/></linearGradient>
   <filter id="bcherry-floatm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="ccherry-floatm"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -203,13 +208,14 @@
   <path d="M38,85 C36,2 68,-28 110,-28 C152,-28 184,2 182,85" fill="#fff" fill-opacity=".14" stroke="#2b0b1f" stroke-width="2.6" stroke-linejoin="round"/>
        <path d="M66,-14 C80,-22 94,-24 104,-24" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/>
        <rect x="35" y="81" width="150" height="9" rx="4.5" fill="#fff" fill-opacity=".7" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Cherry Float</h3><p class="mcard-price">$6</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Red Cream Soda</li><li>Cream</li><li>Cherry</li><li>Whipped Cream</li></ul>
-  </div>
-</article><article class="mcard" id="cozy-campfire" style="--tint:#efd5bd">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Cherry Float</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ing"><span>Red Cream Soda</span><span>Cream</span><span>Cherry</span><span>Whipped Cream</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="cozy-campfire/" style="--tint:#efd5bd">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gcozy-campfirem" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#94552c"/><stop offset="50%" stop-color="#6a3519"/><stop offset="100%" stop-color="#4b2412"/></linearGradient>
   <filter id="bcozy-campfirem" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="ccozy-campfirem"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -234,13 +240,14 @@
   <path d="M38,85 C36,48 68,18 110,18 C152,18 184,48 182,85" fill="#fff" fill-opacity=".14" stroke="#2b0b1f" stroke-width="2.6" stroke-linejoin="round"/>
        <path d="M66,32 C80,24 94,22 104,22" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/>
        <rect x="35" y="81" width="150" height="9" rx="4.5" fill="#fff" fill-opacity=".7" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Cozy Campfire</h3><p class="mcard-price">$6</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Rootbeer</li><li>Toasted Marshmallow</li><li>Cold Foam</li><li>Marshmallow Fluff</li></ul>
-  </div>
-</article><article class="mcard" id="birthday-bash" style="--tint:#f7e1ef">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Cozy Campfire</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ing"><span>Rootbeer</span><span>Toasted Marshmallow</span><span>Cold Foam</span><span>Marshmallow Fluff</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="birthday-bash/" style="--tint:#f7e1ef">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gbirthday-bashm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a2683d"/><stop offset="50%" stop-color="#6f3a1f"/><stop offset="100%" stop-color="#4b2412"/></linearGradient>
   <filter id="bbirthday-bashm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cbirthday-bashm"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -267,13 +274,14 @@
   <path d="M38,85 C36,2 68,-28 110,-28 C152,-28 184,2 182,85" fill="#fff" fill-opacity=".14" stroke="#2b0b1f" stroke-width="2.6" stroke-linejoin="round"/>
        <path d="M66,-14 C80,-22 94,-24 104,-24" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/>
        <rect x="35" y="81" width="150" height="9" rx="4.5" fill="#fff" fill-opacity=".7" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Birthday Bash</h3><p class="mcard-price">$6</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Rootbeer</li><li>Cake Batter</li><li>White Chocolate</li><li>Cold Foam</li><li>Vanilla Frosting</li></ul>
-  </div>
-</article><article class="mcard" id="the-yeti" style="--tint:#d9ecf2">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Birthday Bash</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ing"><span>Rootbeer</span><span>Cake Batter</span><span>White Chocolate</span><span>Cold Foam</span><span>Vanilla Frosting</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="the-yeti/" style="--tint:#d9ecf2">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gthe-yetim" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8a2a2b"/><stop offset="50%" stop-color="#5a1a18"/><stop offset="100%" stop-color="#3a160f"/></linearGradient>
   <filter id="bthe-yetim" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cthe-yetim"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -292,13 +300,14 @@
   <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">The Yeti</h3><p class="mcard-price">$6</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Coke</li><li>Vanilla</li><li>Cherry</li><li>Cold Foam</li></ul>
-  </div>
-</article><article class="mcard" id="pinkity-drinkity" style="--tint:#ffd6e4">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">The Yeti</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ing"><span>Coke</span><span>Vanilla</span><span>Cherry</span><span>Cold Foam</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="pinkity-drinkity/" style="--tint:#ffd6e4">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gpinkity-drinkitym" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffc2d3"/><stop offset="50%" stop-color="#f78cab"/><stop offset="100%" stop-color="#f2648f"/></linearGradient>
   <filter id="bpinkity-drinkitym" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cpinkity-drinkitym"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -317,13 +326,14 @@
   <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Pinkity Drinkity</h3><p class="mcard-price">$6</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Sprite</li><li>Vanilla</li><li>Strawberry</li><li>Coconut Creme</li></ul>
-  </div>
-</article><article class="mcard" id="765" style="--tint:#ffdad2">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Pinkity Drinkity</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ing"><span>Sprite</span><span>Vanilla</span><span>Strawberry</span><span>Coconut Creme</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="765/" style="--tint:#ffdad2">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="g765m" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a83246"/><stop offset="50%" stop-color="#6b1a26"/><stop offset="100%" stop-color="#3a160f"/></linearGradient>
   <filter id="b765m" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="c765m"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -348,13 +358,14 @@
   <path d="M38,85 C36,48 68,18 110,18 C152,18 184,48 182,85" fill="#fff" fill-opacity=".14" stroke="#2b0b1f" stroke-width="2.6" stroke-linejoin="round"/>
        <path d="M66,32 C80,24 94,22 104,22" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/>
        <rect x="35" y="81" width="150" height="9" rx="4.5" fill="#fff" fill-opacity=".7" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">765</h3><p class="mcard-price">$6</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Coke</li><li>Vanilla</li><li>Strawberry</li><li>Cold Foam</li><li>Marshmallow Fluff</li></ul>
-  </div>
-</article><article class="mcard" id="golden-snitch" style="--tint:#fbe6b8">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">765</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ing"><span>Coke</span><span>Vanilla</span><span>Strawberry</span><span>Cold Foam</span><span>Marshmallow Fluff</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="golden-snitch/" style="--tint:#fbe6b8">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="ggolden-snitchm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f3c56c"/><stop offset="50%" stop-color="#e3a13c"/><stop offset="100%" stop-color="#c9771f"/></linearGradient>
   <filter id="bgolden-snitchm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cgolden-snitchm"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -381,13 +392,14 @@
   <path d="M38,85 C36,2 68,-28 110,-28 C152,-28 184,2 182,85" fill="#fff" fill-opacity=".14" stroke="#2b0b1f" stroke-width="2.6" stroke-linejoin="round"/>
        <path d="M66,-14 C80,-22 94,-24 104,-24" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/>
        <rect x="35" y="81" width="150" height="9" rx="4.5" fill="#fff" fill-opacity=".7" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Golden Snitch</h3><p class="mcard-price">$6</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Cream Soda</li><li>Butterscotch</li><li>Cream</li><li>Whipped Cream</li></ul>
-  </div>
-</article><article class="mcard" id="purple-rain" style="--tint:#e6d8f6">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Golden Snitch</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ing"><span>Cream Soda</span><span>Butterscotch</span><span>Cream</span><span>Whipped Cream</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="purple-rain/" style="--tint:#e6d8f6">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gpurple-rainm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a974d6"/><stop offset="50%" stop-color="#7f43b0"/><stop offset="100%" stop-color="#5b2a86"/></linearGradient>
   <filter id="bpurple-rainm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cpurple-rainm"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -406,13 +418,14 @@
   <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Purple Rain</h3><p class="mcard-price">$6</p></div>
-    <p class="mcard-ask">Ask at the window for what goes in this one.</p>
-  </div>
-</article><article class="mcard" id="orange-dreamsicle" style="--tint:#ffe0c4">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Purple Rain</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ask">Ask at the window for what goes in this one.</span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="orange-dreamsicle/" style="--tint:#ffe0c4">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gorange-dreamsiclem" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffc07a"/><stop offset="50%" stop-color="#f59a3e"/><stop offset="100%" stop-color="#ec7a1c"/></linearGradient>
   <filter id="borange-dreamsiclem" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="corange-dreamsiclem"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -431,12 +444,13 @@
   <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Orange Dreamsicle</h3><p class="mcard-price">$6</p></div>
-    <p class="mcard-ask">Ask at the window for what goes in this one.</p>
-  </div>
-</article></div>
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Orange Dreamsicle</span><span class="mcard-price">$6</span></span>
+    <span class="mcard-ask">Ask at the window for what goes in this one.</span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a></div>
     </div>
   </section><section class="msec" id="energy" aria-labelledby="energy-h">
     <div class="wrap">
@@ -444,8 +458,8 @@
         <h2 class="h2" id="energy-h" data-split>Energy</h2>
         <div class="msec-meta"><p class="msec-price"><b>$8</b><span>24 oz</span></p><p>Alani and Red Bull energy drinks, mixed with flavors.</p></div>
       </header>
-      <div class="mgrid"><article class="mcard" id="princess-peach" style="--tint:#ffdcca">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+      <div class="mgrid"><a class="mcard" href="princess-peach/" style="--tint:#ffdcca">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gprincess-peachm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffb98a"/><stop offset="50%" stop-color="#f7896f"/><stop offset="100%" stop-color="#ef5b7a"/></linearGradient>
   <filter id="bprincess-peachm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cprincess-peachm"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -464,13 +478,14 @@
   <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Princess Peach</h3><p class="mcard-price">$8</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Alani Juicy Peach</li><li>Strawberry</li><li>Peach</li></ul>
-  </div>
-</article><article class="mcard" id="berries-n-cream" style="--tint:#ffd0dd">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Princess Peach</span><span class="mcard-price">$8</span></span>
+    <span class="mcard-ing"><span>Alani Juicy Peach</span><span>Strawberry</span><span>Peach</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="berries-n-cream/" style="--tint:#ffd0dd">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gberries-n-creamm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f590ab"/><stop offset="50%" stop-color="#e34f74"/><stop offset="100%" stop-color="#c4234f"/></linearGradient>
   <filter id="bberries-n-creamm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cberries-n-creamm"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -497,13 +512,14 @@
   <path d="M38,85 C36,2 68,-28 110,-28 C152,-28 184,2 182,85" fill="#fff" fill-opacity=".14" stroke="#2b0b1f" stroke-width="2.6" stroke-linejoin="round"/>
        <path d="M66,-14 C80,-22 94,-24 104,-24" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/>
        <rect x="35" y="81" width="150" height="9" rx="4.5" fill="#fff" fill-opacity=".7" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Berries N' Cream</h3><p class="mcard-price">$8</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Iced Vanilla Berry Red Bull</li><li>Vanilla</li><li>Strawberry</li><li>Cream</li><li>Whipped Cream</li></ul>
-  </div>
-</article><article class="mcard" id="yeti-juice" style="--tint:#ffd9cc">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Berries N' Cream</span><span class="mcard-price">$8</span></span>
+    <span class="mcard-ing"><span>Iced Vanilla Berry Red Bull</span><span>Vanilla</span><span>Strawberry</span><span>Cream</span><span>Whipped Cream</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="yeti-juice/" style="--tint:#ffd9cc">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gyeti-juicem" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fba06e"/><stop offset="50%" stop-color="#f2705a"/><stop offset="100%" stop-color="#e8414f"/></linearGradient>
   <filter id="byeti-juicem" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cyeti-juicem"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -528,13 +544,14 @@
   <path d="M38,85 C36,48 68,18 110,18 C152,18 184,48 182,85" fill="#fff" fill-opacity=".14" stroke="#2b0b1f" stroke-width="2.6" stroke-linejoin="round"/>
        <path d="M66,32 C80,24 94,22 104,22" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/>
        <rect x="35" y="81" width="150" height="9" rx="4.5" fill="#fff" fill-opacity=".7" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Yeti Juice</h3><p class="mcard-price">$8</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Strawberry Apricot Red Bull</li><li>Strawberry</li><li>Vanilla</li><li>Marshmallow Fluff</li></ul>
-  </div>
-</article><article class="mcard" id="5-oclock-somewhere" style="--tint:#ffe1c2">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Yeti Juice</span><span class="mcard-price">$8</span></span>
+    <span class="mcard-ing"><span>Strawberry Apricot Red Bull</span><span>Strawberry</span><span>Vanilla</span><span>Marshmallow Fluff</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="5-oclock-somewhere/" style="--tint:#ffe1c2">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="g5-oclock-somewherem" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffb45a"/><stop offset="50%" stop-color="#f4823a"/><stop offset="100%" stop-color="#e8434d"/></linearGradient>
   <filter id="b5-oclock-somewherem" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="c5-oclock-somewherem"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -553,13 +570,14 @@
   <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">5 O'Clock Somewhere</h3><p class="mcard-price">$8</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Alani Orange Kiss</li><li>Strawberry</li><li>Vanilla</li><li>Cream</li><li>Orange Juice</li></ul>
-  </div>
-</article><article class="mcard" id="malibu-barbie" style="--tint:#ffcfe3">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">5 O'Clock Somewhere</span><span class="mcard-price">$8</span></span>
+    <span class="mcard-ing"><span>Alani Orange Kiss</span><span>Strawberry</span><span>Vanilla</span><span>Cream</span><span>Orange Juice</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="malibu-barbie/" style="--tint:#ffcfe3">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gmalibu-barbiem" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8dbd"/><stop offset="50%" stop-color="#f2559a"/><stop offset="100%" stop-color="#e5267a"/></linearGradient>
   <filter id="bmalibu-barbiem" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cmalibu-barbiem"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -578,13 +596,14 @@
   <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Malibu Barbie</h3><p class="mcard-price">$8</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Alani Pink Slush</li><li>Vanilla</li><li>Strawberry</li></ul>
-  </div>
-</article><article class="mcard" id="blue-voltage" style="--tint:#cfe7fb">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Malibu Barbie</span><span class="mcard-price">$8</span></span>
+    <span class="mcard-ing"><span>Alani Pink Slush</span><span>Vanilla</span><span>Strawberry</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="blue-voltage/" style="--tint:#cfe7fb">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gblue-voltagem" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4fc0f2"/><stop offset="50%" stop-color="#1f8be6"/><stop offset="100%" stop-color="#0f63c9"/></linearGradient>
   <filter id="bblue-voltagem" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cblue-voltagem"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -603,12 +622,13 @@
   <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Blue Voltage</h3><p class="mcard-price">$8</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Alani Blue Slush</li><li>Blue Raspberry</li><li class="more">and more</li></ul><p class="mcard-ask">The rest is on the board at the window.</p>
-  </div>
-</article></div>
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Blue Voltage</span><span class="mcard-price">$8</span></span>
+    <span class="mcard-ing"><span>Alani Blue Slush</span><span>Blue Raspberry</span><span class="more">and more</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a></div>
     </div>
   </section><section class="msec" id="lemonade" aria-labelledby="lemonade-h">
     <div class="wrap">
@@ -616,8 +636,8 @@
         <h2 class="h2" id="lemonade-h" data-split>Lemonade</h2>
         <div class="msec-meta"><p class="msec-price"><b>$10</b><span>32 oz</span></p><p>Lemonade mixed with flavors, in the big 32 oz cup.</p></div>
       </header>
-      <div class="mgrid"><article class="mcard" id="peaches-n-cream" style="--tint:#ffe2cf">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
+      <div class="mgrid"><a class="mcard" href="peaches-n-cream/" style="--tint:#ffe2cf">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gpeaches-n-creamm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffd7b0"/><stop offset="50%" stop-color="#fbb985"/><stop offset="100%" stop-color="#f59a62"/></linearGradient>
   <filter id="bpeaches-n-creamm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cpeaches-n-creamm"><path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -636,13 +656,14 @@
   <path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.146341463414636,78 L71.67479674796748,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="46" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Peaches N' Cream</h3><p class="mcard-price">$10</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Peach</li><li>Half n Half</li><li>Vanilla</li><li>Cold Foam</li></ul>
-  </div>
-</article><article class="mcard" id="jolly-rancher" style="--tint:#d6f0d9">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Peaches N' Cream</span><span class="mcard-price">$10</span></span>
+    <span class="mcard-ing"><span>Peach</span><span>Half n Half</span><span>Vanilla</span><span>Cold Foam</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="jolly-rancher/" style="--tint:#d6f0d9">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gjolly-rancherm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b8fe6"/><stop offset="30.33333333333333%" stop-color="#2b8fe6"/><stop offset="36.33333333333333%" stop-color="#e9435f"/><stop offset="63.66666666666666%" stop-color="#e9435f"/><stop offset="69.66666666666666%" stop-color="#2a9c3e"/><stop offset="97%" stop-color="#2a9c3e"/></linearGradient>
   <filter id="bjolly-rancherm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cjolly-rancherm"><path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -661,13 +682,14 @@
   <path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.146341463414636,78 L71.67479674796748,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="46" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Jolly Rancher</h3><p class="mcard-price">$10</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Blue Raspberry</li><li>Watermelon</li><li>Green Apple</li></ul>
-  </div>
-</article><article class="mcard" id="sunset" style="--tint:#ffe3b9">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Jolly Rancher</span><span class="mcard-price">$10</span></span>
+    <span class="mcard-ing"><span>Blue Raspberry</span><span>Watermelon</span><span>Green Apple</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="sunset/" style="--tint:#ffe3b9">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gsunsetm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffc23d"/><stop offset="50%" stop-color="#f7783a"/><stop offset="100%" stop-color="#e5303f"/></linearGradient>
   <filter id="bsunsetm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="csunsetm"><path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -686,13 +708,14 @@
   <path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.146341463414636,78 L71.67479674796748,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="46" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Sunset</h3><p class="mcard-price">$10</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Mango</li><li>Strawberry</li></ul>
-  </div>
-</article><article class="mcard" id="love-island" style="--tint:#ffdbe6">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Sunset</span><span class="mcard-price">$10</span></span>
+    <span class="mcard-ing"><span>Mango</span><span>Strawberry</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="love-island/" style="--tint:#ffdbe6">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
   <defs><linearGradient id="glove-islandm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fde3ea"/><stop offset="50%" stop-color="#f7a0b8"/><stop offset="100%" stop-color="#ee5b86"/></linearGradient>
   <filter id="blove-islandm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="clove-islandm"><path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -711,13 +734,14 @@
   <path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.146341463414636,78 L71.67479674796748,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="46" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Love Island</h3><p class="mcard-price">$10</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Sprite/Lemonade</li><li>Vanilla</li><li>Coconut</li><li>Strawberry</li><li>Cream</li></ul>
-  </div>
-</article><article class="mcard" id="gone-fishing" style="--tint:#ccefee">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Love Island</span><span class="mcard-price">$10</span></span>
+    <span class="mcard-ing"><span>Sprite/Lemonade</span><span>Vanilla</span><span>Coconut</span><span>Strawberry</span><span>Cream</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="gone-fishing/" style="--tint:#ccefee">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
   <defs><linearGradient id="ggone-fishingm" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#58d0ef"/><stop offset="50%" stop-color="#25b9d6"/><stop offset="100%" stop-color="#14a3a0"/></linearGradient>
   <filter id="bgone-fishingm" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cgone-fishingm"><path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -736,13 +760,14 @@
   <path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.146341463414636,78 L71.67479674796748,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="46" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Gone Fishing</h3><p class="mcard-price">$10</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Blue Raspberry</li><li>Lime</li></ul>
-  </div>
-</article><article class="mcard" id="strawberry-shortcake" style="--tint:#ffd9e1">
-  <div class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Gone Fishing</span><span class="mcard-price">$10</span></span>
+    <span class="mcard-ing"><span>Blue Raspberry</span><span>Lime</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a><a class="mcard" href="strawberry-shortcake/" style="--tint:#ffd9e1">
+  <span class="mcard-art"><svg class="cup cup-md " viewBox="0 -110 220 430" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gstrawberry-shortcakem" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffc3d0"/><stop offset="50%" stop-color="#f57c98"/><stop offset="100%" stop-color="#e9406a"/></linearGradient>
   <filter id="bstrawberry-shortcakem" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
   <clipPath id="cstrawberry-shortcakem"><path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
@@ -761,12 +786,13 @@
   <path d="M44,54 L176,54 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
   <path d="M55.146341463414636,78 L71.67479674796748,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
   <rect x="35" y="46" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">Strawberry Shortcake</h3><p class="mcard-price">$10</p></div>
-    <ul class="mcard-ing" aria-label="Ingredients"><li>Vanilla</li><li>Strawberry</li><li>Half n Half</li><li class="more">and more</li></ul><p class="mcard-ask">The rest is on the board at the window.</p>
-  </div>
-</article></div>
+</svg></span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">Strawberry Shortcake</span><span class="mcard-price">$10</span></span>
+    <span class="mcard-ing"><span>Vanilla</span><span>Strawberry</span><span>Half n Half</span><span class="more">and more</span></span>
+    <span class="mcard-go">Details <svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </span>
+</a></div>
     </div>
   </section>
 
@@ -783,16 +809,16 @@
     </div>
     <div class="ftr-cols">
       <div><p class="lbl">Explore</p><a href="../">Home</a><a href="../menu/">Menu</a><a href="../find-us/">Find us</a><a href="../events/">Events</a><a href="../about/">About</a></div>
-      <div><p class="lbl">The menu</p><a href="../menu/#soda">Soda · $6</a><a href="../menu/#energy">Energy · $8</a><a href="../menu/#lemonade">Lemonade · $10</a><a href="../menu/#jack-frost">Jack Frost</a></div>
+      <div><p class="lbl">The menu</p><a href="../menu/#soda">Soda · $6</a><a href="../menu/#energy">Energy · $8</a><a href="../menu/#lemonade">Lemonade · $10</a><a href="../menu/jack-frost/">Jack Frost</a></div>
       <div><p class="lbl">Follow along</p><a href="https://www.instagram.com/thedirtyyeti_/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Instagram</a><a href="https://www.facebook.com/people/The-Dirty-Yeti/61586227516939/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.4h2.5l.4-3h-2.9V8.8c0-.9.3-1.5 1.5-1.5h1.5V4.6c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.3H8.2v3h2.5V21" fill="currentColor"/></svg>Facebook</a></div>
       <div class="ftr-mail"><p class="lbl">Email</p><a href="mailto:thedirtyyeti.dirtysodaco@gmail.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7.5l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>thedirtyyeti.<wbr>dirtysodaco<wbr>@gmail.com</span></a></div>
     </div>
   </div>
   <div class="ftr-word" aria-hidden="true"><span>The Dirty Yeti</span></div>
   <div class="ftr-bot wrap"><p>© <span data-year>2026</span> The Dirty Yeti · Dirty Soda Co. All rights reserved.</p><p>Locations change, so check <a href="https://www.facebook.com/people/The-Dirty-Yeti/61586227516939/" target="_blank" rel="noopener">Facebook</a> or <a href="https://www.instagram.com/thedirtyyeti_/" target="_blank" rel="noopener">Instagram</a> before you head out.</p></div>
-</footer><script src="../assets/vendor/gsap.min.js?v=3"></script>
-<script src="../assets/vendor/ScrollTrigger.min.js?v=3"></script>
-<script src="../assets/vendor/lenis.min.js?v=3"></script>
-<script src="../assets/js/site.js?v=3"></script>
+</footer><script src="../assets/vendor/gsap.min.js?v=4"></script>
+<script src="../assets/vendor/ScrollTrigger.min.js?v=4"></script>
+<script src="../assets/vendor/lenis.min.js?v=4"></script>
+<script src="../assets/js/site.js?v=4"></script>
 </body>
 </html>

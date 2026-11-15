@@ -25,18 +25,18 @@ export function home() {
   return head({ root, title: 'The Dirty Yeti · Dirty Soda Co. | Yes, we’re THAT pink camper', desc: 'The Dirty Yeti is a mobile dirty soda co. in Indiana. Dirty sodas, energy drinks and lemonades from THAT pink camper. Follow along to see where we’ll be next.', path: '', body: 'p-home' }) + header(root, '') + `
 <main id="main">
   <section class="hero" data-hero>
-    <div class="hero-pin">
-      <div class="hero-bg" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="hero-bg" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="hero-in wrap">
       <div class="hero-copy">
         <p class="hero-kick" data-rise>Mobile dirty soda co. · Indiana</p>
         <h1 class="hero-h"><span class="l l1"><span data-split>Yes, we’re</span></span><span class="l l2"><span data-split>THAT</span><svg class="squig" viewBox="0 0 300 30" aria-hidden="true" preserveAspectRatio="none"><path d="M4 18 C 40 4, 70 28, 104 15 S 170 4, 204 16 S 262 28, 296 10" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg></span><span class="l l3"><span data-split>pink camper.</span></span></h1>
+        <p class="hero-sub" data-rise>Dirty sodas, energy drinks and lemonades, poured at the window of a pink camper. Follow along to see where we’ll be next.</p>
         <div class="hero-ctas" data-rise>${btn('menu/', 'See the menu', { cls: 'btn-cream' })}${btn('find-us/', 'Find the camper', { cls: 'btn-line', icon: ico.pin, iconFirst: true })}</div>
       </div>
       <div class="hero-media" data-hero-media>
-        <div class="hero-frame">${pic(root, 'cover', 'The pink Dirty Yeti camper with a row of dirty sodas lined up in front and smiling staff at the order windows', { sizes: '(min-width: 900px) 60vw, 100vw', eager: true })}</div>
-        <span class="hero-cup hc1" data-float>${cup(yeti, { root, uid: 'h' })}</span>
-        <span class="hero-cup hc2" data-float>${cup(pinkity, { root, uid: 'h' })}</span>
-        <span class="hero-cup hc3" data-float>${cup(cherry, { root, uid: 'h' })}</span>
+        <figure class="hero-frame">${pic(root, 'cover', 'The pink Dirty Yeti camper with a row of dirty sodas lined up in front and smiling staff at the order windows', { sizes: '(min-width: 900px) 52vw, 92vw', eager: true })}</figure>
+        <a class="hero-cup hc1" href="menu/the-yeti/" aria-label="The Yeti">${cup(yeti, { root, uid: 'h' })}</a>
+        <a class="hero-cup hc2" href="menu/pinkity-drinkity/" aria-label="Pinkity Drinkity">${cup(pinkity, { root, uid: 'h' })}</a>
       </div>
     </div>
   </section>
@@ -49,7 +49,7 @@ export function home() {
       <p class="sec-sub" data-rise>Dr Pepper, Coke, root beer and more, mixed with syrups and cream. Here are a few from the board.</p>
     </div>
     <div class="wrap">
-      <div class="fgrid">${feat.map(d => card(root, d, { href: `menu/#${d.id}`, uid: 'f' })).join('')}</div>
+      <div class="fgrid">${feat.map(d => card(root, d, { href: `menu/${d.id}/`, uid: 'f' })).join('')}</div>
       <div class="feat-foot" data-rise><p>Six more sodas, six energy drinks and six lemonades are on the full menu.</p>${btn('menu/', 'See the full menu', { cls: 'btn-ink' })}</div>
     </div>
   </section>
@@ -97,7 +97,7 @@ export function home() {
         <p class="badge-new">${ico.spark}New on the board</p>
         <h2 id="drop-h" class="drop-h" data-split>Jack Frost</h2>
         <p class="drop-sub" data-rise>The newest seasonal drink from the camper. Ask at the window what’s in it.</p>
-        <div data-rise>${btn('menu/#jack-frost', 'See it on the menu', { cls: 'btn-ink' })}</div>
+        <div data-rise>${btn('menu/jack-frost/', 'More about Jack Frost', { cls: 'btn-ink' })}</div>
       </div>
     </div>
   </section>
@@ -142,17 +142,19 @@ export function home() {
 }
 
 /* ---------------- MENU ---------------- */
-const mcard = (root, d) => `<article class="mcard" id="${d.id}" style="--tint:${d.tint}">
-  <div class="mcard-art">${cup(d, { root, uid: 'm' })}</div>
-  <div class="mcard-body">
-    <div class="mcard-top"><h3 class="mcard-name">${esc(d.name)}</h3><p class="mcard-price">${priceOf(d)}</p></div>
-    ${d.unread ? `<p class="mcard-ask">Ask at the window for what goes in this one.</p>`
-      : `<ul class="mcard-ing" aria-label="Ingredients">${d.ing.map(i => `<li>${esc(i)}</li>`).join('')}${d.partial ? '<li class="more">and more</li>' : ''}</ul>${d.partial ? `<p class="mcard-ask">The rest is on the board at the window.</p>` : ''}`}
-  </div>
-</article>`;
+const mcard = (root, d) => `<a class="mcard" href="${d.id}/" style="--tint:${d.tint}">
+  <span class="mcard-art">${cup(d, { root, uid: 'm' })}</span>
+  <span class="mcard-body">
+    <span class="mcard-top"><span class="mcard-name">${esc(d.name)}</span><span class="mcard-price">${priceOf(d)}</span></span>
+    ${d.unread ? `<span class="mcard-ask">Ask at the window for what goes in this one.</span>`
+      : `<span class="mcard-ing">${d.ing.map(i => `<span>${esc(i)}</span>`).join('')}${d.partial ? '<span class="more">and more</span>' : ''}</span>`}
+    <span class="mcard-go">Details ${ico.arrow}</span>
+  </span>
+</a>`;
 export function menu() {
   const root = '../';
   return head({ root, title: 'Menu · The Dirty Yeti', desc: 'The Dirty Yeti menu: 24 oz dirty sodas $6, 24 oz energy drinks $8 and 32 oz lemonades $10. Every flavor and what goes in it.', path: 'menu/', body: 'p-menu' }) + header(root, 'menu/') + `
+<script>(function(){var h=decodeURIComponent(location.hash.slice(1));var ids=${JSON.stringify([...DRINKS, DROP].map(d => d.id))};if(ids.indexOf(h)>-1)location.replace(h+'/');})()</script>
 <main id="main">
   <section class="phero phero-menu">
     <div class="wrap">
@@ -167,19 +169,20 @@ export function menu() {
     <div class="wrap jump-in">
       <span class="jump-l">Jump to</span>
       ${CATS.map(c => `<a href="#${c.id}" data-jump-link="${c.id}">${c.label} <em>$${c.price}</em></a>`).join('')}
-      <a href="#jack-frost" data-jump-link="jack-frost">New: Jack Frost</a>
+      <a href="#new" data-jump-link="new">New: Jack Frost</a>
     </div>
   </nav>
 
-  <section class="wrap new-w" aria-labelledby="jack-frost-h">
-    <article class="newbanner" id="jack-frost">
+  <section class="wrap new-w" aria-label="New on the board">
+    <a class="newbanner" id="new" href="jack-frost/">
       <div class="nb-cup">${cup(DROP, { root, uid: 'm' })}</div>
       <div class="nb-copy">
         <p class="badge-new">${ico.spark}New on the board</p>
-        <h2 id="jack-frost-h" class="nb-h">Jack Frost</h2>
+        <span id="jack-frost-h" class="nb-h">Jack Frost</span>
         <p>Our newest seasonal drink. Ask at the window for what’s in it and the price.</p>
+        <span class="mcard-go">Details ${ico.arrow}</span>
       </div>
-    </article>
+    </a>
   </section>
 
   ${CATS.map(c => {
@@ -290,54 +293,190 @@ export function events() {
 ` + footer(root) + scripts(root);
 }
 
+/* ---------------- DRINK DETAIL ---------------- */
+const SODA_BASES = ['Dr Pepper', 'Coke', 'Rootbeer', 'Red Cream Soda', 'Cream Soda', 'Sprite', 'Sprite/Lemonade'];
+const CREAMS = ['Half n Half', 'Cream', 'Coconut Creme'];
+const TOPS = ['Cold Foam', 'Whipped Cream', 'Marshmallow Fluff'];
+const roleOf = (d, ing, i) => {
+  if (i === 0 && (SODA_BASES.includes(ing) || /^Alani |Red ?Bull/.test(ing))) return 'Base';
+  if (CREAMS.includes(ing)) return 'Cream';
+  if (TOPS.includes(ing)) return 'Topping';
+  return 'Flavor';
+};
+const lc = x => /^(Alani|Dr Pepper|Coke|Sprite)|Red ?Bull/.test(x) ? x.replace('Sprite/Lemonade', 'Sprite and lemonade') : x.toLowerCase().replace('rootbeer', 'root beer');
+const list = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1];
+// Plain sentences built only from the ingredient list on the menu board.
+function helper(d) {
+  const c = catOf(d);
+  if (d.seasonal) return [`Jack Frost is the newest drink on the board, and it’s a seasonal one.`, `We haven’t listed what goes in it or the price here. Ask at the window and we’ll tell you.`];
+  if (d.unread) return [`${d.name} is one of the ${c.size} sodas on the board, $${c.price}.`, `We haven’t listed what goes in this one here yet. Ask at the window for the full build.`];
+  const roles = d.ing.map((x, i) => [x, roleOf(d, x, i)]);
+  const base = roles.filter(r => r[1] === 'Base').map(r => lc(r[0])), fl = roles.filter(r => r[1] === 'Flavor').map(r => lc(r[0]));
+  const cr = roles.filter(r => r[1] === 'Cream').map(r => lc(r[0])), tp = roles.filter(r => r[1] === 'Topping').map(r => lc(r[0]));
+  const out = [];
+  const what = d.cat === 'soda' ? 'dirty soda' : d.cat === 'energy' ? 'energy drink' : 'lemonade';
+  let first = `${d.name} is a ${c.size} ${what}`;
+  if (base.length) first += d.cat === 'energy' ? ` built on ${base[0]}` : ` that starts with ${base[0]}`;
+  if (fl.length) first += `${base.length ? ',' : ''} flavored with ${list(fl)}`;
+  out.push(first + '.');
+  const bits = [];
+  if (cr.length) bits.push(`It’s made creamy with ${list(cr)}`);
+  if (tp.length) bits.push(`${cr.length ? 'and' : 'It’s'} finished with ${list(tp)}`);
+  if (bits.length) out.push(bits.join(' ') + '.');
+  else if (d.cat !== 'soda' && !d.partial) out.push(`No cream or toppings are listed for this one.`);
+  if (d.partial) out.push(`The menu lists a little more than what’s shown here. Ask at the window for the full build.`);
+  return out;
+}
+const ALL = [...DRINKS, DROP];
+export const drinkIds = ALL.map(d => d.id);
+export function drink(id) {
+  const d = byId(id), root = '../../', c = d.seasonal ? null : catOf(d);
+  const i = ALL.indexOf(d), prev = ALL[(i - 1 + ALL.length) % ALL.length], next = ALL[(i + 1) % ALL.length];
+  const same = d.seasonal ? FEATURED.map(byId).slice(0, 4) : (() => { const l = DRINKS.filter(x => x.cat === d.cat); const k = l.indexOf(d); return [1, 2, 3, 4].map(n => l[(k + n) % l.length]); })();
+  const label = d.seasonal ? 'New · Seasonal' : c.label;
+  const what = d.seasonal ? 'Seasonal drink' : `${c.size} ${c.label.toLowerCase()}`;
+  const desc = d.seasonal ? 'Jack Frost is the newest seasonal drink at The Dirty Yeti. Ask at the window for what’s in it.'
+    : `${d.name}: a ${c.size} ${c.label.toLowerCase()} from The Dirty Yeti, $${c.price}. ${d.ing.length ? 'Made with ' + list(d.ing) + (d.partial ? ' and more' : '') + '.' : 'Ask at the window for what goes in it.'}`;
+  const known = d.ing.map((x, k) => `<li class="layer" data-rise><span class="ly-dot" aria-hidden="true"></span><span class="ly-name">${esc(x)}</span><span class="ly-role">${roleOf(d, x, k)}</span></li>`).join('');
+  const ask = (d.partial || d.unread || d.seasonal) ? `<li class="layer layer-ask" data-rise><span class="ly-dot" aria-hidden="true"></span><span class="ly-name">${d.partial ? 'And a little more' : 'Ask at the window'}</span><span class="ly-role">${d.partial ? 'Ask at the window' : 'Not listed yet'}</span></li>` : '';
+  const pn = (x, dir) => `<a class="pn pn-${dir}" href="${root}menu/${x.id}/" style="--tint:${x.tint}"><span class="pn-k">${dir === 'prev' ? 'Previous drink' : 'Next drink'}</span><span class="pn-n">${esc(x.name)}</span><span class="pn-cup">${cup(x, { root, uid: 'p' + dir })}</span></a>`;
+  return head({ root, title: `${d.name} · ${d.seasonal ? 'New' : c.label} · The Dirty Yeti`, desc, path: `menu/${d.id}/`, body: 'p-drink' }) + header(root, 'menu/') + `
+<main id="main">
+  <section class="dhero" style="--tint:${d.tint}">
+    <div class="wrap dhero-in">
+      <div class="dhero-copy">
+        <nav class="crumbs" aria-label="Breadcrumb" data-rise><a href="${root}menu/">Menu</a><span aria-hidden="true">/</span>${d.seasonal ? `<a href="${root}menu/#new">New</a>` : `<a href="${root}menu/#${c.id}">${c.label}</a>`}</nav>
+        <h1 class="dh-name" data-split>${esc(d.name)}</h1>
+        <ul class="dh-facts" data-rise>
+          <li><span>Menu</span><b>${label}</b></li>
+          <li><span>Size</span><b>${d.seasonal ? 'Ask' : c.size}</b></li>
+          <li><span>Price</span><b>${d.seasonal ? 'Ask' : '$' + c.price}</b></li>
+        </ul>
+        <div class="dh-ctas" data-rise>${btn(root + 'find-us/', 'Find the camper', { cls: 'btn-ink', icon: ico.pin, iconFirst: true })}${btn(root + 'menu/', 'Full menu', { cls: 'btn-line-ink' })}</div>
+      </div>
+      <div class="dhero-cup" data-pour>${cup(d, { root, uid: 'd', size: 'xl' })}</div>
+    </div>
+  </section>
+
+  <section class="wrap sec dbuild" aria-labelledby="build-h">
+    <div class="db-side">
+      <p class="eyebrow">The build</p>
+      <h2 id="build-h" class="h2" data-split>What’s in it.</h2>
+      <div class="db-copy">${helper(d).map(t => `<p data-rise>${esc(t)}</p>`).join('')}</div>
+    </div>
+    <ol class="layers" aria-label="Ingredients, in menu order">${known}${ask}</ol>
+  </section>
+
+  <section class="dorder">
+    <div class="wrap dorder-in">
+      <div><h2 class="dorder-h" data-split>Order at the window.</h2><p data-rise>No online ordering. Find the camper, pick from the board and order at the window.</p></div>
+      <div data-rise>${btn(root + 'find-us/', 'Find the camper', { cls: 'btn-pink', icon: ico.pin, iconFirst: true })}</div>
+    </div>
+  </section>
+
+  <nav class="wrap pnav" aria-label="More drinks">${pn(prev, 'prev')}${pn(next, 'next')}</nav>
+
+  <section class="wrap sec more" aria-labelledby="more-h">
+    <div class="sec-head"><div><p class="eyebrow">${d.seasonal ? 'From the board' : c.size + ' · $' + c.price}</p><h2 id="more-h" class="h2" data-split>${d.seasonal ? 'More on the menu.' : 'More from ' + c.label + '.'}</h2></div>${btn(root + 'menu/' + (d.seasonal ? '' : '#' + c.id), d.seasonal ? 'See the menu' : 'All ' + c.label.toLowerCase(), { cls: 'btn-line-ink btn-sm' })}</div>
+    <div class="fgrid fgrid-4">${same.map(x => card(root, x, { href: `${root}menu/${x.id}/`, uid: 'r' })).join('')}</div>
+  </section>
+</main>
+` + footer(root) + scripts(root);
+}
+
 /* ---------------- ABOUT ---------------- */
 export function about() {
   const root = '../';
-  return head({ root, title: 'About · The Dirty Yeti', desc: 'The Dirty Yeti is a mobile dirty soda co. in Indiana, serving from THAT pink camper.', path: 'about/', body: 'p-about' }) + header(root, 'about/') + `
+  const sig = ['the-yeti', 'butter-me-up', 'malibu-barbie', 'love-island'].map(byId);
+  const en = ['princess-peach', 'malibu-barbie', 'blue-voltage'].map(byId), le = ['sunset', 'love-island', 'gone-fishing'].map(byId);
+  const mini = (d, k) => `<span class="eq-cup">${cup(d, { root, uid: k })}</span>`;
+  return head({ root, title: 'About · The Dirty Yeti', desc: 'The Dirty Yeti is a mobile dirty soda co. based in Indiana, serving dirty sodas, energy drinks and lemonades from THAT pink camper.', path: 'about/', body: 'p-about' }) + header(root, 'about/') + `
 <main id="main">
-  <section class="phero phero-about">
-    <div class="wrap ab-hero">
+  <section class="ab2-hero">
+    <div class="wrap ab2-hero-in">
+      <div class="ab2-hero-copy">
+        <p class="eyebrow eb-cream" data-rise>About The Dirty Yeti</p>
+        <h1 class="ab2-h" data-split>Yes, we’re THAT pink camper.</h1>
+        <p class="ph-sub" data-rise>A mobile dirty soda co. based in Indiana.</p>
+      </div>
+      <div class="ab2-hero-pic">
+        <figure class="ab2-frame" data-rise>${pic(root, 'truck-1', 'The pink Dirty Yeti camper with its order window open, menu boards on the side and the yeti logo on the door', { sizes: '(min-width: 900px) 46vw, 92vw', eager: true })}</figure>
+        <img class="ab2-badge" src="${root}assets/img/logo-240.png" alt="" width="240" height="230">
+      </div>
+    </div>
+  </section>
+
+  <section class="ab2-lede wrap">
+    <p class="lede" data-lede>The Dirty Yeti serves dirty sodas, energy drinks and lemonades out of a pink camper. We park, open the window and start pouring. Then we move on, so the best way to find us is to follow along.</p>
+  </section>
+
+  <section class="ab2-spread wrap" aria-label="Photos from the camper">
+    <figure class="sp-main" data-tilt>${pic(root, 'cover', 'The pink camper with staff at both windows and a lineup of drinks in front', { sizes: '(min-width: 900px) 62vw, 92vw' })}<figcaption>The camper, the windows and a lineup from the board.</figcaption></figure>
+    <figure class="sp-a" data-tilt>${pic(root, 'drink-1', 'A blue and white swirled drink with whipped cream and blue sprinkles', { sizes: '(min-width: 900px) 28vw, 46vw' })}</figure>
+    <figure class="sp-b" data-tilt>${pic(root, 'drink-4', 'A caramel-drizzled drink with a pink straw held up at the window', { sizes: '(min-width: 900px) 28vw, 46vw' })}</figure>
+  </section>
+
+  <section class="ab2-what" aria-labelledby="what-h">
+    <div class="wrap ab2-what-in">
+      <div class="aw-copy">
+        <p class="eyebrow">The short version</p>
+        <h2 id="what-h" class="h2" data-split>What’s a dirty soda?</h2>
+        <p data-rise>A dirty soda is a soda mixed with flavored syrups and a splash of cream or creamer, usually over ice. Some get a topping like cold foam or whipped cream.</p>
+        <p data-rise>The idea took off in Utah’s soda shops and has spread from there. Ours start with sodas like Dr Pepper, Coke, root beer, cream soda and Sprite.</p>
+      </div>
+      <div class="eq" aria-hidden="true" data-rise>
+        <div class="eq-row"><span class="eq-t">Soda</span><span class="eq-op">+</span><span class="eq-t">Syrup</span><span class="eq-op">+</span><span class="eq-t">Cream</span></div>
+        <div class="eq-cups">${mini(byId('the-yeti'), 'e1')}${mini(byId('velvet-cherry'), 'e2')}${mini(byId('butter-me-up'), 'e3')}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec ab2-how" aria-labelledby="how-h">
+    <h2 id="how-h" class="h2" data-split>How it works.</h2>
+    <div class="how-grid">
+      <article class="how-c" data-rise><span class="how-i">${ico.pin}</span><h3>Find the camper</h3><p>We move around. Check <a href="${FB}" target="_blank" rel="noopener">Facebook</a> or <a href="${IG}" target="_blank" rel="noopener">Instagram</a> to see where we’ll be.</p></article>
+      <article class="how-c" data-rise><span class="how-i">${ico.cup}</span><h3>Pick from the board</h3><ul class="how-menu">${CATS.map(c => `<li><a href="${root}menu/#${c.id}"><b>${c.label}</b><span>${c.size}</span><em>$${c.price}</em></a></li>`).join('')}</ul></article>
+      <article class="how-c" data-rise><span class="how-i">${ico.yeti}</span><h3>Order at the window</h3><p>Order and pick up right at the camper window. There’s no online ordering.</p></article>
+    </div>
+  </section>
+
+  <section class="ab2-nyt" aria-labelledby="ab-nyt-h">
+    <div class="wrap">
+      <h2 id="ab-nyt-h" class="ab2-nyt-h" data-split>Soda not your thing?</h2>
+      <div class="nyt-tiles">
+        <a class="nyt-tile t-energy" href="${root}menu/#energy" data-tilt><span class="nt-cups">${en.map((d, i) => `<span class="nt-cup n${i}">${cup(d, { root, uid: 'an' })}</span>`).join('')}</span><span class="nt-t"><span class="nt-k">24 oz · $8</span><span class="nt-h">Energy</span><span class="nt-s">Alani and Red Bull energy drinks, mixed with flavors.</span></span><span class="nt-go">${ico.arrow}</span></a>
+        <a class="nyt-tile t-lemon" href="${root}menu/#lemonade" data-tilt><span class="nt-cups">${le.map((d, i) => `<span class="nt-cup n${i}">${cup(d, { root, uid: 'al' })}</span>`).join('')}</span><span class="nt-t"><span class="nt-k">32 oz · $10</span><span class="nt-h">Lemonade</span><span class="nt-s">Lemonade mixed with flavors, in the big cup.</span></span><span class="nt-go">${ico.arrow}</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec" aria-labelledby="sig-h">
+    <div class="sec-head"><div><p class="eyebrow">From the board</p><h2 id="sig-h" class="h2" data-split>A few to start with.</h2></div>${btn(root + 'menu/', 'Full menu', { cls: 'btn-line-ink btn-sm' })}</div>
+    <div class="fgrid fgrid-4">${sig.map(d => card(root, d, { href: `${root}menu/${d.id}/`, uid: 's' })).join('')}</div>
+  </section>
+
+  <section class="ab2-yeti">
+    <div class="wrap ab2-yeti-in">
+      <img src="${root}assets/img/logo-640.png" alt="The Dirty Yeti logo: a grinning white yeti holding a pink soda topped with whipped cream and cherries" width="640" height="612" loading="lazy" data-float>
       <div>
-        <p class="eyebrow eb-cream" data-rise>About</p>
-        <h1 class="ph-h ph-h-ab" data-split>Mobile dirty soda co.</h1>
-        <p class="ph-sub" data-rise>The Dirty Yeti serves dirty sodas, energy drinks and lemonades out of a pink camper in Indiana.</p>
+        <p class="eyebrow">The mascot</p>
+        <h2 class="h2" data-split>Meet the yeti.</h2>
+        <p data-rise>He’s on the side of the camper and on every cup: a big white yeti with a wide grin, holding a pink soda with whipped cream and cherries on top. He’s the reason it’s The Dirty Yeti.</p>
+        <p data-rise>And yes, there’s a drink named after him. <a href="${root}menu/the-yeti/">The Yeti</a> is Coke, vanilla, cherry and cold foam.</p>
       </div>
-      <img class="ab-logo" src="${root}assets/img/logo-640.png" alt="The Dirty Yeti logo: a grinning white yeti holding a pink soda" width="640" height="612" data-float>
-    </div>
-  </section>
-
-  <section class="wrap sec ab-split">
-    <figure class="ab-ph" data-tilt>${pic(root, 'cover', 'The pink camper with dirty sodas lined up in front', { sizes: '(min-width: 900px) 50vw, 100vw' })}</figure>
-    <div class="ab-copy">
-      <h2 class="h2" data-split>Yes, we’re THAT pink camper.</h2>
-      <p data-rise>If you’ve spotted a pink camper with a yeti on the side, that was us. We park, open the window and start pouring.</p>
-      <p data-rise>We don’t stay in one place, so the best way to find us is to follow along on <a href="${FB}" target="_blank" rel="noopener">Facebook</a> and <a href="${IG}" target="_blank" rel="noopener">Instagram</a>.</p>
-    </div>
-  </section>
-
-  <section class="ab-what">
-    <div class="wrap ab-what-in">
-      <h2 class="h2" data-split>So what’s a dirty soda?</h2>
-      <div class="ab-what-grid">
-        <p data-rise>A dirty soda is a soda that’s been mixed up: flavored syrups, plus cream or creamer, sometimes finished with cold foam or whipped cream.</p>
-        <p data-rise>Ours start with sodas like Dr Pepper, Coke, root beer, cream soda and Sprite. If soda isn’t your thing, we also do energy drinks and lemonades.</p>
-      </div>
-      <ul class="ab-cats">${CATS.map(c => `<li data-rise><a href="${root}menu/#${c.id}"><b>${c.label}</b><span>${c.size} · $${c.price}</span>${ico.arrow}</a></li>`).join('')}</ul>
-    </div>
-  </section>
-
-  <section class="wrap sec ab-yeti">
-    <div class="ab-yeti-card">
-      <img src="${root}assets/img/logo-240.png" alt="" width="240" height="230" loading="lazy">
-      <div><h2 class="h2">About the yeti.</h2><p>He’s on the side of the camper and on every cup. He’s holding a soda and he looks thrilled about it.</p></div>
     </div>
   </section>
 
   <section class="book">
     <div class="wrap book-in">
-      <h2 class="book-h" data-split>Come find the pink camper.</h2>
-      <div class="book-r" data-rise><p>Check where we’ll be next, or see what’s on the board.</p>${btn('../find-us/', 'Find us', { cls: 'btn-pink', icon: ico.pin, iconFirst: true })}<a class="ul-link" href="../menu/">See the menu</a></div>
+      <h2 class="book-h" data-split>Want the pink camper at your event?</h2>
+      <div class="book-r" data-rise><p>Email us with the date, the place and what you’re planning.</p>${btn(`mailto:${EMAIL}?subject=${encodeURIComponent('The pink camper at our event')}`, 'Email us', { cls: 'btn-pink', icon: ico.mail, iconFirst: true })}<a class="ul-link" href="${root}events/">More about events</a></div>
     </div>
+  </section>
+
+  <section class="follow-big" aria-label="Follow The Dirty Yeti">
+    <a class="fb-row" href="${FB}" target="_blank" rel="noopener"><span class="fb-i">${ico.fb}</span><span class="fb-t">Facebook</span><span class="fb-s">See where we’ll be next</span>${ico.arrow}</a>
+    <a class="fb-row" href="${IG}" target="_blank" rel="noopener"><span class="fb-i">${ico.ig}</span><span class="fb-t">Instagram</span><span class="fb-s">${IG_HANDLE}</span>${ico.arrow}</a>
   </section>
 </main>
 ` + footer(root) + scripts(root);
