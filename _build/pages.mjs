@@ -6,19 +6,11 @@ const byId = id => DRINKS.find(d => d.id === id) || (id === DROP.id ? DROP : nul
 const catOf = d => CATS.find(c => c.id === d.cat);
 const priceOf = d => d.seasonal ? 'New' : '$' + catOf(d).price;
 const sizeOf = d => d.seasonal ? 'Seasonal' : catOf(d).size;
-const tagsOf = (d, max = 3) => {
-  if (d.unread || d.seasonal) return `<span class="tag tag-ask">Ask at the window</span>`;
-  const t = d.ing.slice(0, max).map(i => `<span class="tag">${esc(i)}</span>`);
-  const more = d.ing.length - max + (d.partial ? 1 : 0);
-  if (d.ing.length > max) t.push(`<span class="tag tag-more">+${d.ing.length - max} more</span>`);
-  else if (d.partial) t.push(`<span class="tag tag-more">+ more</span>`);
-  return t.join('');
-};
-const card = (root, d, { href, uid = '', cls = '' } = {}) => `<a class="dcard ${cls}" href="${href}" data-drink="${d.id}" style="--tint:${d.cup && d.tint}">
+const card = (root, d, { href, uid = '', cls = '' } = {}) => `<a class="dcard ${cls}" href="${href}" style="--tint:${d.cup && d.tint}">
   <span class="dcard-cup">${cup(d, { root, uid })}</span>
   <span class="dcard-meta"><span class="dcard-size">${sizeOf(d)}</span><span class="dcard-price">${priceOf(d)}</span></span>
   <span class="dcard-name">${esc(d.name)}</span>
-  <span class="dcard-tags">${tagsOf(d)}</span>
+  <span class="dcard-ing">${d.unread || d.seasonal ? 'Ask at the window' : esc(d.ing.join(' · ')) + (d.partial ? ' · and more' : '')}</span>
 </a>`;
 const split = s => s; // words are split client-side ([data-split])
 const marquee = (names, cls = '') => `<div class="mq ${cls}" aria-hidden="true"><div class="mq-track">${[0, 1].map(() => `<div class="mq-set">${names.map(n => `<span>${esc(n)}</span>${ico.spark}`).join('')}</div>`).join('')}</div></div>`;
@@ -45,7 +37,6 @@ export function home() {
         <span class="hero-cup hc1" data-float>${cup(yeti, { root, uid: 'h' })}</span>
         <span class="hero-cup hc2" data-float>${cup(pinkity, { root, uid: 'h' })}</span>
         <span class="hero-cup hc3" data-float>${cup(cherry, { root, uid: 'h' })}</span>
-        <p class="hero-chip"><span class="dot"></span>Order at the window</p>
       </div>
     </div>
   </section>
@@ -55,14 +46,12 @@ export function home() {
   <section class="feat sec" aria-labelledby="feat-h">
     <div class="wrap sec-head">
       <div><p class="eyebrow">24 oz · $6</p><h2 id="feat-h" class="h2" data-split>The soda lineup.</h2></div>
-      <p class="sec-sub" data-rise>Dr Pepper, Coke, root beer and more, mixed with syrups and cream. Tap a cup to see what’s in it.</p>
+      <p class="sec-sub" data-rise>Dr Pepper, Coke, root beer and more, mixed with syrups and cream. Here are a few from the board.</p>
     </div>
-    <div class="rail" data-rail>
-      <div class="rail-track" data-rail-track>${feat.map(d => card(root, d, { href: `menu/#${d.id}`, uid: 'f' })).join('')}
-        <a class="dcard dcard-all" href="menu/"><span class="all-t">See all twelve sodas</span><span class="all-i">${ico.arrow}</span><span class="all-s">Plus energy drinks and lemonades</span></a>
-      </div>
+    <div class="wrap">
+      <div class="fgrid">${feat.map(d => card(root, d, { href: `menu/#${d.id}`, uid: 'f' })).join('')}</div>
+      <div class="feat-foot" data-rise><p>Six more sodas, six energy drinks and six lemonades are on the full menu.</p>${btn('menu/', 'See the full menu', { cls: 'btn-ink' })}</div>
     </div>
-    <div class="wrap rail-foot"><div class="rail-bar" aria-hidden="true"><i data-rail-bar></i></div>${btn('menu/', 'Full menu', { cls: 'btn-ink btn-sm' })}</div>
   </section>
 
   <section class="build" data-build aria-labelledby="build-h">
@@ -153,42 +142,56 @@ export function home() {
 }
 
 /* ---------------- MENU ---------------- */
+const mcard = (root, d) => `<article class="mcard" id="${d.id}" style="--tint:${d.tint}">
+  <div class="mcard-art">${cup(d, { root, uid: 'm' })}</div>
+  <div class="mcard-body">
+    <div class="mcard-top"><h3 class="mcard-name">${esc(d.name)}</h3><p class="mcard-price">${priceOf(d)}</p></div>
+    ${d.unread ? `<p class="mcard-ask">Ask at the window for what goes in this one.</p>`
+      : `<ul class="mcard-ing" aria-label="Ingredients">${d.ing.map(i => `<li>${esc(i)}</li>`).join('')}${d.partial ? '<li class="more">and more</li>' : ''}</ul>${d.partial ? `<p class="mcard-ask">The rest is on the board at the window.</p>` : ''}`}
+  </div>
+</article>`;
 export function menu() {
   const root = '../';
-  const data = [...DRINKS, DROP].map(d => ({ id: d.id, name: d.name, cat: d.cat, ing: d.ing, partial: !!d.partial, unread: !!d.unread, seasonal: !!d.seasonal, tint: d.tint, size: sizeOf(d), price: priceOf(d), label: d.seasonal ? 'New' : catOf(d).label }));
   return head({ root, title: 'Menu · The Dirty Yeti', desc: 'The Dirty Yeti menu: 24 oz dirty sodas $6, 24 oz energy drinks $8 and 32 oz lemonades $10. Every flavor and what goes in it.', path: 'menu/', body: 'p-menu' }) + header(root, 'menu/') + `
 <main id="main">
   <section class="phero phero-menu">
     <div class="wrap">
       <p class="eyebrow eb-cream" data-rise>Order at the window</p>
       <h1 class="ph-h" data-split>The menu.</h1>
-      <ul class="sizes" data-rise>${CATS.map(c => `<li><b>${c.label}</b><span>${c.size}</span><em>$${c.price}</em></li>`).join('')}</ul>
+      <p class="ph-sub" data-rise>Every drink on the board at the camper, and what goes in it.</p>
     </div>
     ${marquee([...DRINKS].map(d => d.name).filter((_, i) => i % 2 === 0), 'mq-pink')}
   </section>
 
-  <section class="wrap dropbar-w">
-    <a class="dropbar" href="#jack-frost" data-drink="jack-frost">
-      <span class="db-cup">${cup(DROP, { root, uid: 'm' })}</span>
-      <span class="db-t"><span class="badge-new">${ico.spark}New</span><span class="db-h">Jack Frost</span><span class="db-s">Our newest seasonal drink. Tap for the details.</span></span>
-      <span class="db-go">${ico.chev}</span>
-    </a>
+  <nav class="jump" aria-label="Menu sections" data-jump>
+    <div class="wrap jump-in">
+      <span class="jump-l">Jump to</span>
+      ${CATS.map(c => `<a href="#${c.id}" data-jump-link="${c.id}">${c.label} <em>$${c.price}</em></a>`).join('')}
+      <a href="#jack-frost" data-jump-link="jack-frost">New: Jack Frost</a>
+    </div>
+  </nav>
+
+  <section class="wrap new-w" aria-labelledby="jack-frost-h">
+    <article class="newbanner" id="jack-frost">
+      <div class="nb-cup">${cup(DROP, { root, uid: 'm' })}</div>
+      <div class="nb-copy">
+        <p class="badge-new">${ico.spark}New on the board</p>
+        <h2 id="jack-frost-h" class="nb-h">Jack Frost</h2>
+        <p>Our newest seasonal drink. Ask at the window for what’s in it and the price.</p>
+      </div>
+    </article>
   </section>
 
-  <div class="tabs-w" data-tabs-w>
-    <div class="tabs wrap" role="tablist" aria-label="Menu categories" data-tabs>
-      ${CATS.map((c, i) => `<button role="tab" id="tab-${c.id}" aria-controls="p-${c.id}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-tab="${c.id}"><span>${c.label}</span><em>$${c.price}</em></button>`).join('')}
-      <span class="tab-ink" data-tab-ink aria-hidden="true"></span>
-    </div>
-  </div>
-
-  ${CATS.map((c, i) => {
+  ${CATS.map(c => {
     const list = DRINKS.filter(d => d.cat === c.id);
-    return `<section class="panel" id="p-${c.id}" role="tabpanel" aria-labelledby="tab-${c.id}" data-panel="${c.id}"${i ? ' hidden' : ''}>
-    <div class="wrap panel-head"><h2 class="h2">${c.label}</h2><p><b>${c.size} · $${c.price}</b> ${c.blurb}</p></div>
-    <div class="rail rail-menu" data-rail><div class="rail-track grid" data-rail-track>${list.map(d => card(root, d, { href: `#${d.id}`, uid: 'm' })).join('')}</div></div>
-    <div class="wrap rail-foot rail-foot-m"><div class="rail-bar" aria-hidden="true"><i data-rail-bar></i></div><p class="swipe-hint">Swipe for more</p></div>
-    <div class="wrap"><ul class="mlist">${list.map(d => `<li><a href="#${d.id}" data-drink="${d.id}"><span class="ml-sw" style="--a:${d.cup.layers[0]};--b:${d.cup.layers[2]}"></span><span class="ml-t"><b>${esc(d.name)}</b><span>${d.unread ? 'Ask at the window' : esc(d.ing.join(' · ')) + (d.partial ? ' · and more' : '')}</span></span>${ico.chev}</a></li>`).join('')}</ul></div>
+    return `<section class="msec" id="${c.id}" aria-labelledby="${c.id}-h">
+    <div class="wrap">
+      <header class="msec-head">
+        <h2 class="h2" id="${c.id}-h" data-split>${c.label}</h2>
+        <div class="msec-meta"><p class="msec-price"><b>$${c.price}</b><span>${c.size}</span></p><p>${c.blurb}</p></div>
+      </header>
+      <div class="mgrid">${list.map(d => mcard(root, d)).join('')}</div>
+    </div>
   </section>`;
   }).join('')}
 
@@ -197,29 +200,6 @@ export function menu() {
     ${btn('../find-us/', 'Where we’ll be next', { cls: 'btn-ink', icon: ico.pin, iconFirst: true })}
   </section>
 </main>
-
-<div class="sheet" data-sheet hidden>
-  <div class="sheet-scrim" data-sheet-close></div>
-  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-name" tabindex="-1" data-sheet-panel>
-    <div class="sheet-grab" data-sheet-grab><i></i></div>
-    <button class="sheet-x" type="button" aria-label="Close" data-sheet-close>${ico.close}</button>
-    <div class="sheet-art" data-sheet-art></div>
-    <div class="sheet-body">
-      <p class="sheet-k"><span data-sheet-cat></span><span data-sheet-size></span></p>
-      <h2 class="sheet-name" id="sheet-name" data-sheet-name></h2>
-      <p class="sheet-price" data-sheet-price></p>
-      <h3 class="sheet-lbl">What’s in it</h3>
-      <ul class="sheet-build" data-sheet-build></ul>
-      <p class="sheet-note" data-sheet-note></p>
-      <div class="sheet-foot">
-        <p class="sheet-order">${ico.cup}Order at the window. No online ordering.</p>
-        <div class="sheet-nav"><button type="button" data-sheet-prev aria-label="Previous drink">${ico.chev}</button><button type="button" data-sheet-next aria-label="Next drink">${ico.chev}</button></div>
-      </div>
-    </div>
-  </div>
-</div>
-${[...DRINKS, DROP].map(d => `<template id="cup-${d.id}">${cup(d, { root, uid: 's', size: 'xl' })}</template>`).join('')}
-<script>window.DY_MENU=${JSON.stringify(data)};</script>
 ` + footer(root) + scripts(root);
 }
 

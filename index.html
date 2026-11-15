@@ -14,7 +14,7 @@
 <link rel="icon" href="assets/img/favicon.png" type="image/png"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400..800;1,500&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=1">
+<link rel="stylesheet" href="assets/css/site.css?v=2">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FoodEstablishment","name":"The Dirty Yeti","alternateName":"The Dirty Yeti Dirty Soda Co.","description":"Mobile dirty soda co. in Indiana. Yes, we’re THAT pink camper.","email":"thedirtyyeti.dirtysodaco@gmail.com","url":"https://justuseflint.github.io/dirty-yeti/","image":"https://justuseflint.github.io/dirty-yeti/assets/img/og.jpg","logo":"https://justuseflint.github.io/dirty-yeti/assets/img/logo-640.png","servesCuisine":"Dirty soda, energy drinks, lemonade","areaServed":"Indiana","sameAs":["https://www.facebook.com/people/The-Dirty-Yeti/61586227516939/","https://www.instagram.com/thedirtyyeti_/"],"hasMenu":"https://justuseflint.github.io/dirty-yeti/menu/","priceRange":"$6–$10"}</script>
 <script>(function(d,w){var h=d.documentElement;h.className=h.className.replace('no-js','js');var rm=w.matchMedia&&w.matchMedia('(prefers-reduced-motion: reduce)').matches;if(!rm){h.classList.add('motion');try{if(sessionStorage.getItem('dy-pt')==='1')h.classList.add('pt-in')}catch(e){}}else{h.classList.add('no-motion')}setTimeout(function(){if(!w.__dyReady){h.classList.remove('motion','pt-in');h.classList.add('no-motion')}},4000)})(document,window)</script>
 </head>
@@ -24,14 +24,20 @@
   <a class="hdr-logo" href="" aria-label="The Dirty Yeti, home"><img src="assets/img/logo-240.png" alt="" width="240" height="230"></a>
   <nav class="hdr-nav" aria-label="Primary"><a href="menu/">Menu</a><a href="find-us/">Find us</a><a href="events/">Events</a><a href="about/">About</a></nav>
   <div class="hdr-r">
-    <a class="hdr-soc" href="https://www.instagram.com/thedirtyyeti_/" target="_blank" rel="noopener" aria-label="Instagram @thedirtyyeti_"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></a>
-    <a class="hdr-soc" href="https://www.facebook.com/people/The-Dirty-Yeti/61586227516939/" target="_blank" rel="noopener" aria-label="The Dirty Yeti on Facebook"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.4h2.5l.4-3h-2.9V8.8c0-.9.3-1.5 1.5-1.5h1.5V4.6c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.3H8.2v3h2.5V21" fill="currentColor"/></svg></a>
-    <a class="btn btn-ink btn-sm hdr-cta" href="find-us/" data-magnetic><span class="btn-in"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.1-6.5-11a6.5 6.5 0 0113 0c0 4.9-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg><span class="btn-t" data-text="Where’s the camper?">Where’s the camper?</span></span></a>
+    <a class="btn btn-ink btn-sm hdr-cta" href="find-us/" data-magnetic><span class="btn-in"><span class="btn-t" data-text="Where’s the camper?">Where’s the camper?</span><svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav-overlay" data-burger><span class="burger-t">Menu</span><span class="burger-i" aria-hidden="true"><i></i><i></i></span><span class="sr">Open navigation</span></button>
   </div>
 </header>
-<nav class="tabbar" aria-label="App">
-  <a href="" aria-current="page"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-6.5 8 6.5V20h-5v-5.5H9V20H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Home</span></a><a href="menu/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1.4 12.2a1 1 0 01-1 .8H8.4a1 1 0 01-1-.8zM5 8h14M13 8l2-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg><span>Menu</span></a><a href="find-us/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.1-6.5-11a6.5 6.5 0 0113 0c0 4.9-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg><span>Find us</span></a><a href="events/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l5-13 8 8zM14 4c.5 1.5 0 2.5-1 3.5M19 9c-1.5-.4-2.6 0-3.5 1M18.5 4.5l.01 0M20 13.5l.01 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg><span>Events</span></a><a href="about/"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c-4 0-7 3-7 7.2V20h14v-9.3c0-4.2-3-7.2-7-7.2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 13.5c1 1.6 2.2 2.2 3.5 2.2s2.5-.6 3.5-2.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9.5" cy="10" r="1.1" fill="currentColor"/><circle cx="14.5" cy="10" r="1.1" fill="currentColor"/></svg><span>About</span></a>
-</nav>
+<div class="nav-ov" id="nav-overlay" data-nav hidden>
+  <div class="nav-ov-bg" aria-hidden="true"></div>
+  <div class="nav-ov-in" role="dialog" aria-modal="true" aria-label="Site navigation">
+    <nav class="nav-ov-links" aria-label="Mobile"><a href="" aria-current="page"><span>Home</span></a><a href="menu/"><span>Menu</span></a><a href="find-us/"><span>Find us</span></a><a href="events/"><span>Events</span></a><a href="about/"><span>About</span></a></nav>
+    <div class="nav-ov-foot">
+      <p>Yes, we’re THAT pink camper. Follow along to see where we’ll be next.</p>
+      <div class="nav-ov-soc"><a href="https://www.instagram.com/thedirtyyeti_/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Instagram</a><a href="https://www.facebook.com/people/The-Dirty-Yeti/61586227516939/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.4h2.5l.4-3h-2.9V8.8c0-.9.3-1.5 1.5-1.5h1.5V4.6c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.3H8.2v3h2.5V21" fill="currentColor"/></svg>Facebook</a><a href="mailto:thedirtyyeti.dirtysodaco@gmail.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7.5l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Email us</a></div>
+    </div>
+  </div>
+</div>
 <main id="main">
   <section class="hero" data-hero>
     <div class="hero-pin">
@@ -111,7 +117,6 @@
        <path d="M66,-14 C80,-22 94,-24 104,-24" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".8"/>
        <rect x="35" y="81" width="150" height="9" rx="4.5" fill="#fff" fill-opacity=".7" stroke="#2b0b1f" stroke-width="2.6"/>
 </svg></span>
-        <p class="hero-chip"><span class="dot"></span>Order at the window</p>
       </div>
     </div>
   </section>
@@ -121,10 +126,10 @@
   <section class="feat sec" aria-labelledby="feat-h">
     <div class="wrap sec-head">
       <div><p class="eyebrow">24 oz · $6</p><h2 id="feat-h" class="h2" data-split>The soda lineup.</h2></div>
-      <p class="sec-sub" data-rise>Dr Pepper, Coke, root beer and more, mixed with syrups and cream. Tap a cup to see what’s in it.</p>
+      <p class="sec-sub" data-rise>Dr Pepper, Coke, root beer and more, mixed with syrups and cream. Here are a few from the board.</p>
     </div>
-    <div class="rail" data-rail>
-      <div class="rail-track" data-rail-track><a class="dcard " href="menu/#the-yeti" data-drink="the-yeti" style="--tint:#d9ecf2">
+    <div class="wrap">
+      <div class="fgrid"><a class="dcard " href="menu/#the-yeti" style="--tint:#d9ecf2">
   <span class="dcard-cup"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gthe-yetif" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8a2a2b"/><stop offset="50%" stop-color="#5a1a18"/><stop offset="100%" stop-color="#3a160f"/></linearGradient>
   <filter id="bthe-yetif" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
@@ -147,8 +152,8 @@
 </svg></span>
   <span class="dcard-meta"><span class="dcard-size">24 oz</span><span class="dcard-price">$6</span></span>
   <span class="dcard-name">The Yeti</span>
-  <span class="dcard-tags"><span class="tag">Coke</span><span class="tag">Vanilla</span><span class="tag">Cherry</span><span class="tag tag-more">+1 more</span></span>
-</a><a class="dcard " href="menu/#velvet-cherry" data-drink="velvet-cherry" style="--tint:#ffd2dc">
+  <span class="dcard-ing">Coke · Vanilla · Cherry · Cold Foam</span>
+</a><a class="dcard " href="menu/#velvet-cherry" style="--tint:#ffd2dc">
   <span class="dcard-cup"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gvelvet-cherryf" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b23048"/><stop offset="50%" stop-color="#7a1426"/><stop offset="100%" stop-color="#4a1219"/></linearGradient>
   <filter id="bvelvet-cherryf" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
@@ -171,8 +176,8 @@
 </svg></span>
   <span class="dcard-meta"><span class="dcard-size">24 oz</span><span class="dcard-price">$6</span></span>
   <span class="dcard-name">Velvet Cherry</span>
-  <span class="dcard-tags"><span class="tag">Dr Pepper</span><span class="tag">Cherry</span><span class="tag">Cream</span><span class="tag tag-more">+1 more</span></span>
-</a><a class="dcard " href="menu/#pinkity-drinkity" data-drink="pinkity-drinkity" style="--tint:#ffd6e4">
+  <span class="dcard-ing">Dr Pepper · Cherry · Cream · Half n Half</span>
+</a><a class="dcard " href="menu/#pinkity-drinkity" style="--tint:#ffd6e4">
   <span class="dcard-cup"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gpinkity-drinkityf" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffc2d3"/><stop offset="50%" stop-color="#f78cab"/><stop offset="100%" stop-color="#f2648f"/></linearGradient>
   <filter id="bpinkity-drinkityf" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
@@ -195,32 +200,8 @@
 </svg></span>
   <span class="dcard-meta"><span class="dcard-size">24 oz</span><span class="dcard-price">$6</span></span>
   <span class="dcard-name">Pinkity Drinkity</span>
-  <span class="dcard-tags"><span class="tag">Sprite</span><span class="tag">Vanilla</span><span class="tag">Strawberry</span><span class="tag tag-more">+1 more</span></span>
-</a><a class="dcard " href="menu/#butter-me-up" data-drink="butter-me-up" style="--tint:#f3dcc2">
-  <span class="dcard-cup"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
-  <defs><linearGradient id="gbutter-me-upf" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b97a45"/><stop offset="50%" stop-color="#7a3a22"/><stop offset="100%" stop-color="#4a1219"/></linearGradient>
-  <filter id="bbutter-me-upf" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
-  <clipPath id="cbutter-me-upf"><path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z"/></clipPath>
-  <linearGradient id="hbutter-me-upf" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".0"/><stop offset=".18" stop-color="#fff" stop-opacity=".55"/><stop offset=".34" stop-color="#fff" stop-opacity="0"/><stop offset=".86" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".16"/></linearGradient></defs>
-  <ellipse class="shadow" cx="110" cy="308" rx="62" ry="9" fill="#2b0b1f" opacity=".14"/>
-  <g class="straw"><path d="M132,132 L156,14" stroke="#2b0b1f" stroke-width="15" stroke-linecap="round"/><path d="M132,132 L156,14" stroke="#ff6fa8" stroke-width="10" stroke-linecap="round"/><path d="M129.5,122 L152.5,18" stroke="#ffd0e3" stroke-width="2.4" stroke-linecap="round"/></g>
-  <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="#fff" fill-opacity=".35"/>
-  <g clip-path="url(#cbutter-me-upf)"><g class="liq">
-    <rect class="syrup" x="0" y="92" width="220" height="228" fill="url(#gbutter-me-upf)"/>
-    <g class="swirls" filter="url(#bbutter-me-upf)"><path d="M20,118.2 C50.0,96.4 90.0,144.3 115.5,122.0 S180.0,98.6 210,111.6" stroke="#fff3e4" stroke-width="8.4" stroke-linecap="round" fill="none" opacity="0.51"/><path d="M20,176.1 C38.5,155.3 101.5,201.0 109.7,179.1 S191.5,157.4 210,173.2" stroke="#fff3e4" stroke-width="11.9" stroke-linecap="round" fill="none" opacity="0.64"/><path d="M20,226.5 C56.8,214.4 83.2,241.1 118.9,226.8 S173.2,215.6 210,232.0" stroke="#fff3e4" stroke-width="10.2" stroke-linecap="round" fill="none" opacity="0.67"/><path d="M20,275.1 C73.3,264.3 66.7,288.1 127.2,274.2 S156.7,265.4 210,275.2" stroke="#fff3e4" stroke-width="6.2" stroke-linecap="round" fill="none" opacity="0.50"/><path d="M132.2,126.3 c-3.5,20.8 -2.9,41.1 -0.7,62.3" stroke="#fff3e4" stroke-width="3.4" stroke-linecap="round" fill="none" opacity=".45"/><path d="M114.4,247.2 c-6.2,20.4 7.6,40.3 0.4,61.1" stroke="#fff3e4" stroke-width="3.0" stroke-linecap="round" fill="none" opacity=".45"/><path d="M71.9,128.9 c-0.0,22.3 3.2,44.2 1.5,67.0" stroke="#fff3e4" stroke-width="4.4" stroke-linecap="round" fill="none" opacity=".45"/></g><g class="foam"><path d="M0,54 H220 V114 C190,124 170,108 140,117 S90,124 60,114 S20,120 0,114 Z" fill="#f7e3c8"/><path d="M40,115 C70,124 100,110 130,119 S170,122 190,114" stroke="#fff" stroke-opacity=".7" stroke-width="3" fill="none"/></g>
-    <path d="M0,92 C40,88 80,96 120,92 S190,89 220,92" stroke="#fff" stroke-opacity=".35" stroke-width="3" fill="none"/>
-  </g></g>
-  <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="url(#hbutter-me-upf)"/>
-  
-  <g class="sticker"><circle cx="110" cy="200.16" r="34" fill="#fff" stroke="#2b0b1f" stroke-width="2.2"/><clipPath id="sbutter-me-upf"><circle cx="110" cy="200.16" r="31"/></clipPath><image href="assets/img/logo-240.png" x="75" y="167.16" width="70" height="66.98165137614679" clip-path="url(#sbutter-me-upf)"/></g>
-  <path d="M44,84 L176,84 L155,290 Q154,300 144,300 L76,300 Q66,300 65,290 Z" fill="none" stroke="#2b0b1f" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M55.44444444444444,108 L71.35185185185185,274" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>
-  <rect x="35" y="76" width="150" height="11" rx="5.5" fill="#fff" fill-opacity=".72" stroke="#2b0b1f" stroke-width="2.6"/>
-</svg></span>
-  <span class="dcard-meta"><span class="dcard-size">24 oz</span><span class="dcard-price">$6</span></span>
-  <span class="dcard-name">Butter Me Up</span>
-  <span class="dcard-tags"><span class="tag">Dr Pepper</span><span class="tag">Cookie Butter</span><span class="tag">Half n Half</span><span class="tag tag-more">+1 more</span></span>
-</a><a class="dcard " href="menu/#cozy-campfire" data-drink="cozy-campfire" style="--tint:#efd5bd">
+  <span class="dcard-ing">Sprite · Vanilla · Strawberry · Coconut Creme</span>
+</a><a class="dcard " href="menu/#cozy-campfire" style="--tint:#efd5bd">
   <span class="dcard-cup"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="gcozy-campfiref" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#94552c"/><stop offset="50%" stop-color="#6a3519"/><stop offset="100%" stop-color="#4b2412"/></linearGradient>
   <filter id="bcozy-campfiref" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
@@ -249,8 +230,8 @@
 </svg></span>
   <span class="dcard-meta"><span class="dcard-size">24 oz</span><span class="dcard-price">$6</span></span>
   <span class="dcard-name">Cozy Campfire</span>
-  <span class="dcard-tags"><span class="tag">Rootbeer</span><span class="tag">Toasted Marshmallow</span><span class="tag">Cold Foam</span><span class="tag tag-more">+1 more</span></span>
-</a><a class="dcard " href="menu/#765" data-drink="765" style="--tint:#ffdad2">
+  <span class="dcard-ing">Rootbeer · Toasted Marshmallow · Cold Foam · Marshmallow Fluff</span>
+</a><a class="dcard " href="menu/#765" style="--tint:#ffdad2">
   <span class="dcard-cup"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="g765f" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a83246"/><stop offset="50%" stop-color="#6b1a26"/><stop offset="100%" stop-color="#3a160f"/></linearGradient>
   <filter id="b765f" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
@@ -279,8 +260,8 @@
 </svg></span>
   <span class="dcard-meta"><span class="dcard-size">24 oz</span><span class="dcard-price">$6</span></span>
   <span class="dcard-name">765</span>
-  <span class="dcard-tags"><span class="tag">Coke</span><span class="tag">Vanilla</span><span class="tag">Strawberry</span><span class="tag tag-more">+2 more</span></span>
-</a><a class="dcard " href="menu/#golden-snitch" data-drink="golden-snitch" style="--tint:#fbe6b8">
+  <span class="dcard-ing">Coke · Vanilla · Strawberry · Cold Foam · Marshmallow Fluff</span>
+</a><a class="dcard " href="menu/#golden-snitch" style="--tint:#fbe6b8">
   <span class="dcard-cup"><svg class="cup cup-md " viewBox="0 -80 220 400" aria-hidden="true" focusable="false">
   <defs><linearGradient id="ggolden-snitchf" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f3c56c"/><stop offset="50%" stop-color="#e3a13c"/><stop offset="100%" stop-color="#c9771f"/></linearGradient>
   <filter id="bgolden-snitchf" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
@@ -311,12 +292,10 @@
 </svg></span>
   <span class="dcard-meta"><span class="dcard-size">24 oz</span><span class="dcard-price">$6</span></span>
   <span class="dcard-name">Golden Snitch</span>
-  <span class="dcard-tags"><span class="tag">Cream Soda</span><span class="tag">Butterscotch</span><span class="tag">Cream</span><span class="tag tag-more">+1 more</span></span>
-</a>
-        <a class="dcard dcard-all" href="menu/"><span class="all-t">See all twelve sodas</span><span class="all-i"><svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="all-s">Plus energy drinks and lemonades</span></a>
-      </div>
+  <span class="dcard-ing">Cream Soda · Butterscotch · Cream · Whipped Cream</span>
+</a></div>
+      <div class="feat-foot" data-rise><p>Six more sodas, six energy drinks and six lemonades are on the full menu.</p><a class="btn btn-ink" href="menu/" data-magnetic><span class="btn-in"><span class="btn-t" data-text="See the full menu">See the full menu</span><svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
     </div>
-    <div class="wrap rail-foot"><div class="rail-bar" aria-hidden="true"><i data-rail-bar></i></div><a class="btn btn-ink btn-sm" href="menu/" data-magnetic><span class="btn-in"><span class="btn-t" data-text="Full menu">Full menu</span><svg class="ico arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
   </section>
 
   <section class="build" data-build aria-labelledby="build-h">
@@ -567,19 +546,20 @@
   <div class="ftr-top wrap">
     <div class="ftr-brand">
       <img src="assets/img/logo-240.png" alt="The Dirty Yeti, Dirty Soda Co." width="240" height="230" loading="lazy">
-      <p class="ftr-tag">Yes, we’re THAT pink camper.<br>Mobile dirty soda co. in Indiana.</p>
+      <p class="ftr-tag">Mobile dirty soda co. in Indiana. Dirty sodas, energy drinks and lemonades, served from THAT pink camper.</p>
     </div>
     <div class="ftr-cols">
-      <div><p class="lbl">Visit</p><a href="menu/">Menu</a><a href="find-us/">Find us</a><a href="events/">Events</a><a href="about/">About</a></div>
+      <div><p class="lbl">Explore</p><a href="">Home</a><a href="menu/">Menu</a><a href="find-us/">Find us</a><a href="events/">Events</a><a href="about/">About</a></div>
+      <div><p class="lbl">The menu</p><a href="menu/#soda">Soda · $6</a><a href="menu/#energy">Energy · $8</a><a href="menu/#lemonade">Lemonade · $10</a><a href="menu/#jack-frost">Jack Frost</a></div>
       <div><p class="lbl">Follow along</p><a href="https://www.instagram.com/thedirtyyeti_/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Instagram</a><a href="https://www.facebook.com/people/The-Dirty-Yeti/61586227516939/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.4h2.5l.4-3h-2.9V8.8c0-.9.3-1.5 1.5-1.5h1.5V4.6c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.3H8.2v3h2.5V21" fill="currentColor"/></svg>Facebook</a></div>
       <div class="ftr-mail"><p class="lbl">Email</p><a href="mailto:thedirtyyeti.dirtysodaco@gmail.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7.5l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>thedirtyyeti.<wbr>dirtysodaco<wbr>@gmail.com</span></a></div>
     </div>
   </div>
   <div class="ftr-word" aria-hidden="true"><span>The Dirty Yeti</span></div>
-  <div class="ftr-bot wrap"><p>© <span data-year>2026</span> The Dirty Yeti · Dirty Soda Co.</p><p>Order at the window. Locations change, so check <a href="https://www.facebook.com/people/The-Dirty-Yeti/61586227516939/" target="_blank" rel="noopener">Facebook</a> before you head out.</p></div>
-</footer><script src="assets/vendor/gsap.min.js?v=1"></script>
-<script src="assets/vendor/ScrollTrigger.min.js?v=1"></script>
-<script src="assets/vendor/lenis.min.js?v=1"></script>
-<script src="assets/js/site.js?v=1"></script>
+  <div class="ftr-bot wrap"><p>© <span data-year>2026</span> The Dirty Yeti · Dirty Soda Co. All rights reserved.</p><p>Locations change, so check <a href="https://www.facebook.com/people/The-Dirty-Yeti/61586227516939/" target="_blank" rel="noopener">Facebook</a> or <a href="https://www.instagram.com/thedirtyyeti_/" target="_blank" rel="noopener">Instagram</a> before you head out.</p></div>
+</footer><script src="assets/vendor/gsap.min.js?v=2"></script>
+<script src="assets/vendor/ScrollTrigger.min.js?v=2"></script>
+<script src="assets/vendor/lenis.min.js?v=2"></script>
+<script src="assets/js/site.js?v=2"></script>
 </body>
 </html>

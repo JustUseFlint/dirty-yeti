@@ -65,32 +65,38 @@ export function header(root, path) {
   <a class="hdr-logo" href="${root}" aria-label="The Dirty Yeti, home"><img src="${root}assets/img/logo-240.png" alt="" width="240" height="230"></a>
   <nav class="hdr-nav" aria-label="Primary">${NAV.map(([t, h]) => `<a href="${root}${h}"${cur(h)}>${t}</a>`).join('')}</nav>
   <div class="hdr-r">
-    <a class="hdr-soc" href="${IG}" target="_blank" rel="noopener" aria-label="Instagram ${IG_HANDLE}">${ico.ig}</a>
-    <a class="hdr-soc" href="${FB}" target="_blank" rel="noopener" aria-label="The Dirty Yeti on Facebook">${ico.fb}</a>
-    ${btn(root + 'find-us/', 'Where’s the camper?', { cls: 'btn-ink btn-sm hdr-cta', icon: ico.pin, iconFirst: true })}
+    ${btn(root + 'find-us/', 'Where’s the camper?', { cls: 'btn-ink btn-sm hdr-cta' })}
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav-overlay" data-burger><span class="burger-t">Menu</span><span class="burger-i" aria-hidden="true"><i></i><i></i></span><span class="sr">Open navigation</span></button>
   </div>
 </header>
-<nav class="tabbar" aria-label="App">
-  ${[['Home', '', ico.home], ...NAV].map(([t, h, i]) => `<a href="${root}${h}"${(h === '' ? path === '' : path.startsWith(h)) ? ' aria-current="page"' : ''}>${i}<span>${t}</span></a>`).join('')}
-</nav>`;
+<div class="nav-ov" id="nav-overlay" data-nav hidden>
+  <div class="nav-ov-bg" aria-hidden="true"></div>
+  <div class="nav-ov-in" role="dialog" aria-modal="true" aria-label="Site navigation">
+    <nav class="nav-ov-links" aria-label="Mobile">${[['Home', '']].concat(NAV.map(([t, h]) => [t, h])).map(([t, h]) => `<a href="${root}${h}"${(h === '' ? path === '' : path.startsWith(h)) ? ' aria-current="page"' : ''}><span>${t}</span></a>`).join('')}</nav>
+    <div class="nav-ov-foot">
+      <p>Yes, we’re THAT pink camper. Follow along to see where we’ll be next.</p>
+      <div class="nav-ov-soc"><a href="${IG}" target="_blank" rel="noopener">${ico.ig}Instagram</a><a href="${FB}" target="_blank" rel="noopener">${ico.fb}Facebook</a><a href="mailto:${EMAIL}">${ico.mail}Email us</a></div>
+    </div>
+  </div>
+</div>`;
 }
 
 export function footer(root) {
-  const flav = DRINKS.slice(0, 12).map(d => d.name);
   return `<footer class="ftr">
   <div class="ftr-top wrap">
     <div class="ftr-brand">
       <img src="${root}assets/img/logo-240.png" alt="The Dirty Yeti, Dirty Soda Co." width="240" height="230" loading="lazy">
-      <p class="ftr-tag">Yes, we’re THAT pink camper.<br>Mobile dirty soda co. in Indiana.</p>
+      <p class="ftr-tag">Mobile dirty soda co. in Indiana. Dirty sodas, energy drinks and lemonades, served from THAT pink camper.</p>
     </div>
     <div class="ftr-cols">
-      <div><p class="lbl">Visit</p><a href="${root}menu/">Menu</a><a href="${root}find-us/">Find us</a><a href="${root}events/">Events</a><a href="${root}about/">About</a></div>
+      <div><p class="lbl">Explore</p><a href="${root}">Home</a><a href="${root}menu/">Menu</a><a href="${root}find-us/">Find us</a><a href="${root}events/">Events</a><a href="${root}about/">About</a></div>
+      <div><p class="lbl">The menu</p><a href="${root}menu/#soda">Soda · $6</a><a href="${root}menu/#energy">Energy · $8</a><a href="${root}menu/#lemonade">Lemonade · $10</a><a href="${root}menu/#jack-frost">Jack Frost</a></div>
       <div><p class="lbl">Follow along</p><a href="${IG}" target="_blank" rel="noopener">${ico.ig}Instagram</a><a href="${FB}" target="_blank" rel="noopener">${ico.fb}Facebook</a></div>
       <div class="ftr-mail"><p class="lbl">Email</p><a href="mailto:${EMAIL}">${ico.mail}<span>thedirtyyeti.<wbr>dirtysodaco<wbr>@gmail.com</span></a></div>
     </div>
   </div>
   <div class="ftr-word" aria-hidden="true"><span>The Dirty Yeti</span></div>
-  <div class="ftr-bot wrap"><p>© <span data-year>2026</span> The Dirty Yeti · Dirty Soda Co.</p><p>Order at the window. Locations change, so check <a href="${FB}" target="_blank" rel="noopener">Facebook</a> before you head out.</p></div>
+  <div class="ftr-bot wrap"><p>© <span data-year>2026</span> The Dirty Yeti · Dirty Soda Co. All rights reserved.</p><p>Locations change, so check <a href="${FB}" target="_blank" rel="noopener">Facebook</a> or <a href="${IG}" target="_blank" rel="noopener">Instagram</a> before you head out.</p></div>
 </footer>`;
 }
 

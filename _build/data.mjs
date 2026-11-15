@@ -4,7 +4,7 @@ export const EMAIL = 'thedirtyyeti.dirtysodaco@gmail.com';
 export const IG = 'https://www.instagram.com/thedirtyyeti_/';
 export const IG_HANDLE = '@thedirtyyeti_';
 export const FB = 'https://www.facebook.com/people/The-Dirty-Yeti/61586227516939/';
-export const V = '1';
+export const V = '2';
 
 export const CATS = [
   { id: 'soda', label: 'Soda', size: '24 oz', price: 6, blurb: 'Soda mixed with flavored syrups, cream and toppings.' },
@@ -73,5 +73,5 @@ export const DRINKS = [
 export const DROP = { id: 'jack-frost', cat: 'new', name: 'Jack Frost', ing: [], seasonal: true,
   cup: { layers: ['#4fb0e3', '#9fd8f2', '#e4f6ff'], swirl: '#ffffff', top: 'whip' }, tint: '#d8eef8' };
 
-export const FEATURED = ['the-yeti', 'velvet-cherry', 'pinkity-drinkity', 'butter-me-up', 'cozy-campfire', '765', 'golden-snitch'];
+export const FEATURED = ['the-yeti', 'velvet-cherry', 'pinkity-drinkity', 'cozy-campfire', '765', 'golden-snitch'];
 export const RECENT_STOP = { place: 'Walmart', addr: '1835 US 231, Crawfordsville, IN', when: 'Nov 4–7 and Nov 10–14', hours: '11 AM – 5 PM' };
